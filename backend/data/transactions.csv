@@ -1,0 +1,822 @@
+transaction_id,user_id,timestamp,amount,category,merchant,type
+TXN1000,user_123,2025-08-21 11:14:08,1138.17,food,Domino's,expense
+TXN1001,user_123,2025-08-21 16:05:37,1136.93,food,Starbucks,expense
+TXN1002,user_123,2025-08-21 11:32:38,231.17,food,Swiggy,expense
+TXN1003,user_123,2025-08-22 16:26:14,1010.39,food,Starbucks,expense
+TXN1004,user_123,2025-08-22 08:48:51,657.07,transport,Ola,expense
+TXN1005,user_123,2025-08-22 10:13:48,2031.13,shopping,Myntra,expense
+TXN1006,user_123,2025-08-23 21:22:38,235.66,food,Local Grocery,expense
+TXN1007,user_123,2025-08-24 22:24:05,2913.03,shopping,Myntra,expense
+TXN1008,user_123,2025-08-25 00:00:00,999.0,subscriptions,Amazon Prime,expense
+TXN1009,user_123,2025-08-25 18:14:49,197.81,food,Local Grocery,expense
+TXN1010,user_123,2025-08-25 21:06:24,2609.36,entertainment,PVR Cinemas,expense
+TXN1011,user_123,2025-08-25 10:23:22,675.58,transport,Ola,expense
+TXN1012,user_123,2025-08-26 18:04:38,1415.18,food,Domino's,expense
+TXN1013,user_123,2025-08-26 10:29:24,1123.85,food,Local Grocery,expense
+TXN1014,user_123,2025-08-26 16:14:43,2028.0,entertainment,PVR Cinemas,expense
+TXN1015,user_123,2025-08-27 13:25:17,145.42,food,Swiggy,expense
+TXN1016,user_123,2025-08-28 19:20:13,1831.39,entertainment,Pub/Bar,expense
+TXN1017,user_123,2025-08-29 15:09:16,4615.46,housing,Landlord,expense
+TXN1018,user_123,2025-08-29 12:47:37,889.8,food,Starbucks,expense
+TXN1019,user_123,2025-08-30 10:32:31,214.49,transport,Uber,expense
+TXN1020,user_123,2025-08-30 10:40:10,2180.54,healthcare,Local Clinic,expense
+TXN1021,user_123,2025-08-30 14:38:29,97.65,transport,HP Petrol,expense
+TXN1022,user_123,2025-08-31 08:43:46,2624.11,entertainment,BookMyShow,expense
+TXN1023,user_123,2025-08-31 12:49:41,2916.37,shopping,Myntra,expense
+TXN1024,user_123,2025-09-01 00:00:00,85000.0,salary,Employer Inc,income
+TXN1025,user_123,2025-09-01 08:46:56,323.36,food,Domino's,expense
+TXN1026,user_123,2025-09-02 16:58:06,2357.3,entertainment,Pub/Bar,expense
+TXN1027,user_123,2025-09-02 17:12:09,1001.07,food,Local Grocery,expense
+TXN1028,user_123,2025-09-03 16:58:00,633.97,transport,HP Petrol,expense
+TXN1029,user_123,2025-09-04 13:56:53,133.9,transport,Metro,expense
+TXN1030,user_123,2025-09-04 17:05:05,440.57,food,Domino's,expense
+TXN1031,user_123,2025-09-05 00:00:00,25000.0,housing,Landlord,expense
+TXN1032,user_123,2025-09-05 16:49:08,2449.36,healthcare,Apollo Pharmacy,expense
+TXN1033,user_123,2025-09-05 10:16:33,4760.82,shopping,H&M,expense
+TXN1034,user_123,2025-09-06 19:12:45,2339.22,entertainment,PVR Cinemas,expense
+TXN1035,user_123,2025-09-07 15:57:33,2054.67,entertainment,PVR Cinemas,expense
+TXN1036,user_123,2025-09-07 13:01:37,418.44,food,McDonalds,expense
+TXN1037,user_123,2025-09-08 19:40:03,55.39,transport,Ola,expense
+TXN1038,user_123,2025-09-09 09:32:15,2621.02,entertainment,PVR Cinemas,expense
+TXN1039,user_123,2025-09-10 00:00:00,2503.4666674444206,utilities,Electricity Board,expense
+TXN1040,user_123,2025-09-10 17:36:30,1425.17,food,Zomato,expense
+TXN1041,user_123,2025-09-10 11:06:06,4133.74,shopping,H&M,expense
+TXN1042,user_123,2025-09-10 21:46:03,2349.96,housing,Landlord,expense
+TXN1043,user_123,2025-09-11 21:06:15,304.48,transport,Ola,expense
+TXN1044,user_123,2025-09-12 00:00:00,199.0,subscriptions,Gym,expense
+TXN1045,user_123,2025-09-12 11:55:59,258.91,transport,Uber,expense
+TXN1046,user_123,2025-09-13 09:03:41,2611.11,entertainment,Pub/Bar,expense
+TXN1047,user_123,2025-09-13 22:48:54,2916.29,entertainment,BookMyShow,expense
+TXN1048,user_123,2025-09-14 21:25:57,411.02,transport,Uber,expense
+TXN1049,user_123,2025-09-15 00:00:00,199.0,subscriptions,Gym,expense
+TXN1050,user_123,2025-09-15 20:50:29,1016.05,entertainment,PVR Cinemas,expense
+TXN1051,user_123,2025-09-16 20:35:42,3787.27,shopping,H&M,expense
+TXN1052,user_123,2025-09-16 08:37:47,522.73,food,McDonalds,expense
+TXN1053,user_123,2025-09-17 17:30:32,757.24,shopping,Flipkart,expense
+TXN1054,user_123,2025-09-18 10:04:38,516.3,entertainment,BookMyShow,expense
+TXN1055,user_123,2025-09-19 22:36:15,463.4,utilities,Water Bill,expense
+TXN1056,user_123,2025-09-19 14:42:37,514.54,transport,HP Petrol,expense
+TXN1057,user_123,2025-09-19 11:42:45,751.03,transport,Metro,expense
+TXN1058,user_123,2025-09-20 00:00:00,199.0,subscriptions,Amazon Prime,expense
+TXN1059,user_123,2025-09-20 15:20:59,1020.2,food,Swiggy,expense
+TXN1060,user_123,2025-09-20 17:06:04,985.56,food,McDonalds,expense
+TXN1061,user_123,2025-09-21 13:56:04,149.34,transport,Ola,expense
+TXN1062,user_123,2025-09-22 16:45:19,725.97,food,McDonalds,expense
+TXN1063,user_123,2025-09-22 16:00:42,2479.17,entertainment,Pub/Bar,expense
+TXN1064,user_123,2025-09-23 22:08:16,579.68,entertainment,BookMyShow,expense
+TXN1065,user_123,2025-09-23 10:17:18,768.18,utilities,Water Bill,expense
+TXN1066,user_123,2025-09-24 18:54:16,1416.19,shopping,H&M,expense
+TXN1067,user_123,2025-09-25 00:00:00,499.0,subscriptions,Netflix,expense
+TXN1068,user_123,2025-09-25 08:00:21,846.41,subscriptions,Spotify,expense
+TXN1069,user_123,2025-09-26 15:35:45,736.27,entertainment,PVR Cinemas,expense
+TXN1070,user_123,2025-09-26 22:44:57,133.91,transport,Ola,expense
+TXN1071,user_123,2025-09-26 17:35:09,675.95,transport,Indian Oil,expense
+TXN1072,user_123,2025-09-27 22:50:55,622.89,food,Swiggy,expense
+TXN1073,user_123,2025-09-28 09:22:49,458.7,food,McDonalds,expense
+TXN1074,user_123,2025-09-28 17:47:09,1397.22,entertainment,BookMyShow,expense
+TXN1075,user_123,2025-09-29 22:26:01,2489.08,entertainment,BookMyShow,expense
+TXN1076,user_123,2025-09-30 14:51:42,2412.44,entertainment,Pub/Bar,expense
+TXN1077,user_123,2025-09-30 20:44:06,813.65,healthcare,Practo,expense
+TXN1078,user_123,2025-09-30 11:12:52,872.73,utilities,Jio Fiber,expense
+TXN1079,user_123,2025-10-01 00:00:00,85000.0,salary,Employer Inc,income
+TXN1080,user_123,2025-10-01 11:14:01,1240.75,food,Domino's,expense
+TXN1081,user_123,2025-10-01 21:04:49,572.14,food,Local Grocery,expense
+TXN1082,user_123,2025-10-02 21:34:21,459.71,subscriptions,Netflix,expense
+TXN1083,user_123,2025-10-02 10:37:16,1492.13,food,Swiggy,expense
+TXN1084,user_123,2025-10-03 20:20:27,309.27,transport,HP Petrol,expense
+TXN1085,user_123,2025-10-04 11:16:02,1392.08,food,Domino's,expense
+TXN1086,user_123,2025-10-04 20:34:43,439.94,transport,Ola,expense
+TXN1087,user_123,2025-10-04 18:58:21,814.88,housing,Maintenance,expense
+TXN1088,user_123,2025-10-05 00:00:00,25000.0,housing,Landlord,expense
+TXN1089,user_123,2025-10-05 12:32:19,2243.34,entertainment,Pub/Bar,expense
+TXN1090,user_123,2025-10-05 12:35:08,351.8,transport,Ola,expense
+TXN1091,user_123,2025-10-05 18:47:57,755.27,transport,Ola,expense
+TXN1092,user_123,2025-10-06 21:00:19,354.56,transport,Metro,expense
+TXN1093,user_123,2025-10-06 17:41:20,1230.31,food,Starbucks,expense
+TXN1094,user_123,2025-10-06 16:30:50,556.72,transport,Ola,expense
+TXN1095,user_123,2025-10-07 18:39:21,842.79,food,Swiggy,expense
+TXN1096,user_123,2025-10-07 18:19:14,1927.62,healthcare,Apollo Pharmacy,expense
+TXN1097,user_123,2025-10-07 15:39:54,168.94,food,Swiggy,expense
+TXN1098,user_123,2025-10-08 11:45:44,522.32,transport,Indian Oil,expense
+TXN1099,user_123,2025-10-08 18:44:00,232.99,transport,Uber,expense
+TXN1100,user_123,2025-10-09 19:33:29,1258.66,food,Swiggy,expense
+TXN1101,user_123,2025-10-09 09:29:08,738.1,transport,Indian Oil,expense
+TXN1102,user_123,2025-10-10 00:00:00,2501.3665988795296,utilities,Water Bill,expense
+TXN1103,user_123,2025-10-10 15:39:52,1189.06,food,Domino's,expense
+TXN1104,user_123,2025-10-10 22:35:28,484.07,utilities,Electricity Board,expense
+TXN1105,user_123,2025-10-10 12:48:15,2636.03,shopping,Myntra,expense
+TXN1106,user_123,2025-10-11 15:04:45,229.43,transport,Metro,expense
+TXN1107,user_123,2025-10-11 22:34:05,586.12,food,Zomato,expense
+TXN1108,user_123,2025-10-11 10:45:13,654.03,food,Swiggy,expense
+TXN1109,user_123,2025-10-12 00:00:00,499.0,subscriptions,Gym,expense
+TXN1110,user_123,2025-10-12 11:53:26,2370.98,shopping,H&M,expense
+TXN1111,user_123,2025-10-12 19:01:54,1877.01,entertainment,Pub/Bar,expense
+TXN1112,user_123,2025-10-13 12:48:24,757.06,transport,Indian Oil,expense
+TXN1113,user_123,2025-10-13 20:38:57,600.98,transport,Ola,expense
+TXN1114,user_123,2025-10-14 08:24:21,731.18,food,Domino's,expense
+TXN1115,user_123,2025-10-14 10:53:29,2319.43,shopping,Flipkart,expense
+TXN1116,user_123,2025-10-15 00:00:00,999.0,subscriptions,Netflix,expense
+TXN1117,user_123,2025-10-15 09:41:27,547.25,transport,Ola,expense
+TXN1118,user_123,2025-10-15 12:24:20,263.56,utilities,Electricity Board,expense
+TXN1119,user_123,2025-10-16 14:17:48,1201.49,food,Starbucks,expense
+TXN1120,user_123,2025-10-16 08:47:34,221.26,food,Swiggy,expense
+TXN1121,user_123,2025-10-17 18:02:48,202.19,food,Swiggy,expense
+TXN1122,user_123,2025-10-17 08:39:09,838.27,entertainment,BookMyShow,expense
+TXN1123,user_123,2025-10-18 11:29:44,135.79,transport,Metro,expense
+TXN1124,user_123,2025-10-19 19:45:07,980.86,food,Zomato,expense
+TXN1125,user_123,2025-10-19 08:59:19,591.87,entertainment,Pub/Bar,expense
+TXN1126,user_123,2025-10-20 00:00:00,999.0,subscriptions,Gym,expense
+TXN1127,user_123,2025-10-20 17:44:53,835.49,entertainment,Pub/Bar,expense
+TXN1128,user_123,2025-10-20 12:54:43,1111.45,food,McDonalds,expense
+TXN1129,user_123,2025-10-21 08:22:34,3046.7,shopping,H&M,expense
+TXN1130,user_123,2025-10-22 13:00:54,2776.82,housing,Maintenance,expense
+TXN1131,user_123,2025-10-22 13:40:57,442.74,healthcare,Practo,expense
+TXN1132,user_123,2025-10-22 19:33:41,2459.69,shopping,Myntra,expense
+TXN1133,user_123,2025-10-23 15:29:27,1437.8,healthcare,Local Clinic,expense
+TXN1134,user_123,2025-10-23 11:53:59,291.73,transport,Uber,expense
+TXN1135,user_123,2025-10-23 20:29:36,756.36,food,McDonalds,expense
+TXN1136,user_123,2025-10-24 21:20:11,629.15,housing,Maintenance,expense
+TXN1137,user_123,2025-10-24 13:17:56,1259.64,food,McDonalds,expense
+TXN1138,user_123,2025-10-24 08:33:12,1743.21,shopping,Amazon,expense
+TXN1139,user_123,2025-10-25 00:00:00,199.0,subscriptions,Gym,expense
+TXN1140,user_123,2025-10-25 15:41:45,1581.46,shopping,H&M,expense
+TXN1141,user_123,2025-10-25 12:14:25,62.93,transport,Ola,expense
+TXN1142,user_123,2025-10-26 16:33:22,2160.59,shopping,H&M,expense
+TXN1143,user_123,2025-10-26 13:44:29,1786.05,entertainment,PVR Cinemas,expense
+TXN1144,user_123,2025-10-27 11:20:07,278.79,food,Domino's,expense
+TXN1145,user_123,2025-10-27 10:12:13,621.64,transport,Indian Oil,expense
+TXN1146,user_123,2025-10-28 16:38:18,4894.73,shopping,Amazon,expense
+TXN1147,user_123,2025-10-28 13:11:19,881.37,healthcare,Apollo Pharmacy,expense
+TXN1148,user_123,2025-10-29 08:35:18,255.73,transport,Ola,expense
+TXN1149,user_123,2025-10-29 09:55:00,777.51,subscriptions,Amazon Prime,expense
+TXN1150,user_123,2025-10-29 10:03:16,380.35,transport,Indian Oil,expense
+TXN1151,user_123,2025-10-30 09:36:40,1121.63,healthcare,Local Clinic,expense
+TXN1152,user_123,2025-10-31 12:05:15,1283.67,food,Swiggy,expense
+TXN1153,user_123,2025-11-01 00:00:00,85000.0,salary,Employer Inc,income
+TXN1154,user_123,2025-11-01 20:39:14,1594.53,healthcare,Local Clinic,expense
+TXN1155,user_123,2025-11-01 12:55:37,731.38,transport,Indian Oil,expense
+TXN1156,user_123,2025-11-01 17:47:06,1007.68,food,Zomato,expense
+TXN1157,user_123,2025-11-02 10:15:11,1065.58,food,McDonalds,expense
+TXN1158,user_123,2025-11-02 15:44:38,107.9,food,Starbucks,expense
+TXN1159,user_123,2025-11-02 19:18:44,441.03,food,Starbucks,expense
+TXN1160,user_123,2025-11-03 20:50:40,4657.6,shopping,Flipkart,expense
+TXN1161,user_123,2025-11-04 10:58:17,431.78,food,Zomato,expense
+TXN1162,user_123,2025-11-04 12:38:47,345.95,food,McDonalds,expense
+TXN1163,user_123,2025-11-05 00:00:00,25000.0,housing,Landlord,expense
+TXN1164,user_123,2025-11-05 12:44:25,401.52,transport,Metro,expense
+TXN1165,user_123,2025-11-05 09:38:02,420.35,transport,Indian Oil,expense
+TXN1166,user_123,2025-11-06 09:14:43,469.52,food,McDonalds,expense
+TXN1167,user_123,2025-11-06 20:43:52,65.56,transport,Metro,expense
+TXN1168,user_123,2025-11-06 10:30:33,622.33,transport,Indian Oil,expense
+TXN1169,user_123,2025-11-07 18:52:31,958.76,food,Swiggy,expense
+TXN1170,user_123,2025-11-07 13:42:06,356.26,transport,Ola,expense
+TXN1171,user_123,2025-11-08 18:25:52,421.6,transport,HP Petrol,expense
+TXN1172,user_123,2025-11-08 12:20:07,232.95,food,Starbucks,expense
+TXN1173,user_123,2025-11-09 21:34:29,303.11,entertainment,PVR Cinemas,expense
+TXN1174,user_123,2025-11-09 17:48:31,862.02,food,Domino's,expense
+TXN1175,user_123,2025-11-09 12:35:08,88.71,transport,Metro,expense
+TXN1176,user_123,2025-11-10 00:00:00,2157.1741426085673,utilities,Water Bill,expense
+TXN1177,user_123,2025-11-10 17:51:15,1527.31,food,Domino's,expense
+TXN1178,user_123,2025-11-10 16:26:05,909.84,food,Zomato,expense
+TXN1179,user_123,2025-11-11 21:09:31,138.1,transport,Metro,expense
+TXN1180,user_123,2025-11-12 00:00:00,999.0,subscriptions,Amazon Prime,expense
+TXN1181,user_123,2025-11-12 11:29:35,2454.56,healthcare,Apollo Pharmacy,expense
+TXN1182,user_123,2025-11-12 16:47:56,4648.41,housing,Landlord,expense
+TXN1183,user_123,2025-11-13 14:21:59,1261.52,food,McDonalds,expense
+TXN1184,user_123,2025-11-14 12:53:37,850.53,healthcare,Local Clinic,expense
+TXN1185,user_123,2025-11-14 10:28:34,1622.03,entertainment,PVR Cinemas,expense
+TXN1186,user_123,2025-11-15 00:00:00,499.0,subscriptions,Amazon Prime,expense
+TXN1187,user_123,2025-11-15 22:20:55,1067.58,healthcare,Apollo Pharmacy,expense
+TXN1188,user_123,2025-11-15 14:14:54,944.77,entertainment,PVR Cinemas,expense
+TXN1189,user_123,2025-11-15 19:58:51,1196.43,food,Starbucks,expense
+TXN1190,user_123,2025-11-16 18:09:31,2439.46,entertainment,BookMyShow,expense
+TXN1191,user_123,2025-11-16 13:55:06,1520.69,food,Starbucks,expense
+TXN1192,user_123,2025-11-17 19:09:26,392.7,transport,Ola,expense
+TXN1193,user_123,2025-11-18 13:39:44,776.9,transport,Indian Oil,expense
+TXN1194,user_123,2025-11-19 18:54:34,587.61,food,Starbucks,expense
+TXN1195,user_123,2025-11-19 22:48:31,1992.36,entertainment,Pub/Bar,expense
+TXN1196,user_123,2025-11-19 18:43:58,205.44,food,Local Grocery,expense
+TXN1197,user_123,2025-11-20 00:00:00,199.0,subscriptions,Netflix,expense
+TXN1198,user_123,2025-11-20 19:55:06,2353.0,entertainment,PVR Cinemas,expense
+TXN1199,user_123,2025-11-20 08:02:20,545.14,food,Swiggy,expense
+TXN1200,user_123,2025-11-21 11:33:26,2438.09,housing,Landlord,expense
+TXN1201,user_123,2025-11-21 21:24:39,221.17,food,Domino's,expense
+TXN1202,user_123,2025-11-22 11:29:40,487.37,transport,Metro,expense
+TXN1203,user_123,2025-11-23 20:29:57,118.98,food,Local Grocery,expense
+TXN1204,user_123,2025-11-23 15:22:37,1210.89,shopping,Myntra,expense
+TXN1205,user_123,2025-11-24 15:54:19,2163.85,entertainment,BookMyShow,expense
+TXN1206,user_123,2025-11-24 09:15:24,2604.01,entertainment,Pub/Bar,expense
+TXN1207,user_123,2025-11-24 19:18:01,1831.43,housing,Maintenance,expense
+TXN1208,user_123,2025-11-25 00:00:00,499.0,subscriptions,Netflix,expense
+TXN1209,user_123,2025-11-25 08:58:38,800.48,utilities,Water Bill,expense
+TXN1210,user_123,2025-11-25 12:49:51,728.12,transport,Ola,expense
+TXN1211,user_123,2025-11-25 18:12:39,417.09,subscriptions,Amazon Prime,expense
+TXN1212,user_123,2025-11-26 18:53:08,3953.62,shopping,Amazon,expense
+TXN1213,user_123,2025-11-26 12:50:28,2045.12,entertainment,BookMyShow,expense
+TXN1214,user_123,2025-11-26 09:58:18,599.27,transport,Metro,expense
+TXN1215,user_123,2025-11-27 20:34:56,200.6,transport,Metro,expense
+TXN1216,user_123,2025-11-27 21:10:16,735.12,transport,Indian Oil,expense
+TXN1217,user_123,2025-11-27 21:21:51,1096.88,entertainment,BookMyShow,expense
+TXN1218,user_123,2025-11-28 11:55:43,680.04,entertainment,Pub/Bar,expense
+TXN1219,user_123,2025-11-28 21:51:35,2288.35,shopping,Myntra,expense
+TXN1220,user_123,2025-11-29 16:07:29,112.53,utilities,Jio Fiber,expense
+TXN1221,user_123,2025-11-30 14:52:40,802.97,healthcare,Practo,expense
+TXN1222,user_123,2025-11-30 08:39:56,451.0,food,McDonalds,expense
+TXN1223,user_123,2025-11-30 18:04:40,1006.92,food,Starbucks,expense
+TXN1224,user_123,2025-12-01 00:00:00,85000.0,salary,Employer Inc,income
+TXN1225,user_123,2025-12-01 10:02:02,709.15,food,Local Grocery,expense
+TXN1226,user_123,2025-12-01 11:56:34,613.53,entertainment,BookMyShow,expense
+TXN1227,user_123,2025-12-01 19:44:34,2169.55,housing,Maintenance,expense
+TXN1228,user_123,2025-12-02 14:41:06,1195.35,shopping,H&M,expense
+TXN1229,user_123,2025-12-02 12:02:44,945.15,subscriptions,Amazon Prime,expense
+TXN1230,user_123,2025-12-02 11:54:23,763.36,food,Swiggy,expense
+TXN1231,user_123,2025-12-03 18:22:03,4557.63,housing,Maintenance,expense
+TXN1232,user_123,2025-12-03 21:52:29,1538.43,food,Swiggy,expense
+TXN1233,user_123,2025-12-03 17:01:03,3387.67,shopping,Myntra,expense
+TXN1234,user_123,2025-12-04 11:04:53,2424.84,entertainment,Pub/Bar,expense
+TXN1235,user_123,2025-12-05 00:00:00,25000.0,housing,Landlord,expense
+TXN1236,user_123,2025-12-05 11:21:49,659.79,transport,Ola,expense
+TXN1237,user_123,2025-12-06 10:08:34,1378.09,food,Local Grocery,expense
+TXN1238,user_123,2025-12-06 21:01:08,198.93,utilities,Electricity Board,expense
+TXN1239,user_123,2025-12-06 17:20:01,4047.94,housing,Landlord,expense
+TXN1240,user_123,2025-12-07 16:07:47,1205.77,food,Swiggy,expense
+TXN1241,user_123,2025-12-07 16:37:06,633.51,transport,Indian Oil,expense
+TXN1242,user_123,2025-12-08 19:50:58,1018.56,food,Domino's,expense
+TXN1243,user_123,2025-12-08 08:03:30,393.53,transport,Indian Oil,expense
+TXN1244,user_123,2025-12-08 19:58:28,130.97,transport,Uber,expense
+TXN1245,user_123,2025-12-09 10:17:39,326.21,food,Domino's,expense
+TXN1246,user_123,2025-12-10 00:00:00,2378.047032822182,utilities,Water Bill,expense
+TXN1247,user_123,2025-12-10 12:29:32,3188.26,housing,Maintenance,expense
+TXN1248,user_123,2025-12-10 21:41:41,1148.33,food,McDonalds,expense
+TXN1249,user_123,2025-12-11 22:14:26,487.06,utilities,Jio Fiber,expense
+TXN1250,user_123,2025-12-11 19:06:20,1117.08,healthcare,Practo,expense
+TXN1251,user_123,2025-12-11 10:43:59,484.88,food,Starbucks,expense
+TXN1252,user_123,2025-12-12 00:00:00,199.0,subscriptions,Netflix,expense
+TXN1253,user_123,2025-12-12 19:23:51,249.75,food,Zomato,expense
+TXN1254,user_123,2025-12-13 16:21:42,1529.18,food,Swiggy,expense
+TXN1255,user_123,2025-12-13 20:27:55,705.21,transport,Uber,expense
+TXN1256,user_123,2025-12-13 13:06:36,1921.11,entertainment,Pub/Bar,expense
+TXN1257,user_123,2025-12-14 21:06:22,823.9,food,McDonalds,expense
+TXN1258,user_123,2025-12-15 00:00:00,499.0,subscriptions,Netflix,expense
+TXN1259,user_123,2025-12-15 21:35:49,655.42,transport,HP Petrol,expense
+TXN1260,user_123,2025-12-15 08:38:59,678.43,subscriptions,Amazon Prime,expense
+TXN1261,user_123,2025-12-16 12:58:21,1153.26,food,Local Grocery,expense
+TXN1262,user_123,2025-12-17 18:25:04,319.99,food,Zomato,expense
+TXN1263,user_123,2025-12-18 19:33:13,127.59,subscriptions,Gym,expense
+TXN1264,user_123,2025-12-18 13:19:46,305.67,transport,Metro,expense
+TXN1265,user_123,2025-12-18 09:56:03,3054.17,shopping,Flipkart,expense
+TXN1266,user_123,2025-12-19 09:17:28,723.93,shopping,H&M,expense
+TXN1267,user_123,2025-12-20 00:00:00,499.0,subscriptions,Gym,expense
+TXN1268,user_123,2025-12-20 09:22:27,1233.63,food,Swiggy,expense
+TXN1269,user_123,2025-12-20 15:33:42,1119.49,food,Local Grocery,expense
+TXN1270,user_123,2025-12-21 08:00:13,1577.04,food,Local Grocery,expense
+TXN1271,user_123,2025-12-22 12:20:07,3938.72,shopping,Amazon,expense
+TXN1272,user_123,2025-12-23 14:34:45,1290.63,shopping,Flipkart,expense
+TXN1273,user_123,2025-12-23 20:22:04,675.02,transport,Indian Oil,expense
+TXN1274,user_123,2025-12-24 22:04:55,134.88,food,Local Grocery,expense
+TXN1275,user_123,2025-12-24 19:40:26,480.05,transport,Metro,expense
+TXN1276,user_123,2025-12-24 13:10:51,138.05,food,McDonalds,expense
+TXN1277,user_123,2025-12-25 00:00:00,499.0,subscriptions,Amazon Prime,expense
+TXN1278,user_123,2025-12-25 14:37:25,129.4,transport,HP Petrol,expense
+TXN1279,user_123,2025-12-26 13:14:21,1896.24,housing,Landlord,expense
+TXN1280,user_123,2025-12-27 16:12:57,202.62,subscriptions,Amazon Prime,expense
+TXN1281,user_123,2025-12-28 21:09:15,4185.27,shopping,Amazon,expense
+TXN1282,user_123,2025-12-28 17:09:48,402.77,food,Domino's,expense
+TXN1283,user_123,2025-12-29 15:29:48,1266.18,food,McDonalds,expense
+TXN1284,user_123,2025-12-30 17:41:40,743.12,transport,HP Petrol,expense
+TXN1285,user_123,2025-12-30 13:09:28,1564.12,food,Swiggy,expense
+TXN1286,user_123,2025-12-30 20:17:37,523.54,transport,Uber,expense
+TXN1287,user_123,2025-12-31 15:02:03,282.81,transport,Metro,expense
+TXN1288,user_123,2025-12-31 21:54:05,376.48,healthcare,Local Clinic,expense
+TXN1289,user_123,2026-01-01 00:00:00,85000.0,salary,Employer Inc,income
+TXN1290,user_123,2026-01-01 16:50:47,397.03,transport,Uber,expense
+TXN1291,user_123,2026-01-01 18:12:20,657.36,transport,HP Petrol,expense
+TXN1292,user_123,2026-01-01 08:28:06,163.15,transport,Metro,expense
+TXN1293,user_123,2026-01-02 08:15:45,1078.34,food,Starbucks,expense
+TXN1294,user_123,2026-01-02 17:10:23,1714.99,entertainment,PVR Cinemas,expense
+TXN1295,user_123,2026-01-02 20:21:43,1346.02,entertainment,Pub/Bar,expense
+TXN1296,user_123,2026-01-03 09:21:06,682.57,utilities,Water Bill,expense
+TXN1297,user_123,2026-01-04 21:42:58,239.0,transport,HP Petrol,expense
+TXN1298,user_123,2026-01-04 17:42:09,1200.08,entertainment,PVR Cinemas,expense
+TXN1299,user_123,2026-01-04 18:25:08,1094.37,food,McDonalds,expense
+TXN1300,user_123,2026-01-05 00:00:00,25000.0,housing,Landlord,expense
+TXN1301,user_123,2026-01-05 14:41:50,1135.87,entertainment,PVR Cinemas,expense
+TXN1302,user_123,2026-01-05 21:47:43,1741.27,healthcare,Local Clinic,expense
+TXN1303,user_123,2026-01-05 16:23:01,1116.61,food,Local Grocery,expense
+TXN1304,user_123,2026-01-06 20:31:12,430.11,food,Zomato,expense
+TXN1305,user_123,2026-01-06 12:54:50,718.35,entertainment,BookMyShow,expense
+TXN1306,user_123,2026-01-07 22:33:02,4258.04,shopping,Myntra,expense
+TXN1307,user_123,2026-01-07 17:24:09,656.23,utilities,Electricity Board,expense
+TXN1308,user_123,2026-01-07 17:51:57,1151.48,food,Zomato,expense
+TXN1309,user_123,2026-01-08 18:46:15,358.14,transport,Indian Oil,expense
+TXN1310,user_123,2026-01-08 20:28:14,777.15,subscriptions,Spotify,expense
+TXN1311,user_123,2026-01-08 15:57:53,1326.59,food,Zomato,expense
+TXN1312,user_123,2026-01-09 15:29:49,3066.89,shopping,Myntra,expense
+TXN1313,user_123,2026-01-09 14:10:52,2763.08,shopping,Flipkart,expense
+TXN1314,user_123,2026-01-10 00:00:00,2701.8888362273215,utilities,Electricity Board,expense
+TXN1315,user_123,2026-01-10 13:35:59,832.96,food,Swiggy,expense
+TXN1316,user_123,2026-01-10 09:18:05,2821.59,shopping,Flipkart,expense
+TXN1317,user_123,2026-01-11 21:27:05,435.01,transport,Ola,expense
+TXN1318,user_123,2026-01-11 22:01:26,2688.5,entertainment,BookMyShow,expense
+TXN1319,user_123,2026-01-12 00:00:00,499.0,subscriptions,Amazon Prime,expense
+TXN1320,user_123,2026-01-12 11:01:20,867.22,housing,Landlord,expense
+TXN1321,user_123,2026-01-13 10:02:18,812.24,subscriptions,Gym,expense
+TXN1322,user_123,2026-01-13 19:30:28,1124.57,shopping,Amazon,expense
+TXN1323,user_123,2026-01-13 11:53:09,351.31,entertainment,Pub/Bar,expense
+TXN1324,user_123,2026-01-14 20:18:15,480.93,subscriptions,Amazon Prime,expense
+TXN1325,user_123,2026-01-14 18:50:39,468.52,food,Starbucks,expense
+TXN1326,user_123,2026-01-14 15:38:34,1373.07,food,Swiggy,expense
+TXN1327,user_123,2026-01-15 00:00:00,999.0,subscriptions,Spotify,expense
+TXN1328,user_123,2026-01-15 17:22:15,757.39,food,McDonalds,expense
+TXN1329,user_123,2026-01-15 09:33:23,548.28,transport,Uber,expense
+TXN1330,user_123,2026-01-15 20:32:35,1769.02,entertainment,BookMyShow,expense
+TXN1331,user_123,2026-01-16 14:23:16,139.18,utilities,Water Bill,expense
+TXN1332,user_123,2026-01-16 13:15:46,1301.56,food,Domino's,expense
+TXN1333,user_123,2026-01-17 20:21:08,989.34,food,Swiggy,expense
+TXN1334,user_123,2026-01-17 18:11:53,2023.46,housing,Maintenance,expense
+TXN1335,user_123,2026-01-17 10:51:08,1592.03,entertainment,BookMyShow,expense
+TXN1336,user_123,2026-01-18 12:12:02,511.91,utilities,Electricity Board,expense
+TXN1337,user_123,2026-01-18 12:32:25,1152.11,entertainment,Pub/Bar,expense
+TXN1338,user_123,2026-01-18 18:12:18,77.47,transport,Metro,expense
+TXN1339,user_123,2026-01-19 09:51:23,398.73,utilities,Jio Fiber,expense
+TXN1340,user_123,2026-01-20 00:00:00,499.0,subscriptions,Gym,expense
+TXN1341,user_123,2026-01-20 19:31:23,391.66,food,McDonalds,expense
+TXN1342,user_123,2026-01-20 14:05:27,233.62,food,McDonalds,expense
+TXN1343,user_123,2026-01-21 09:20:42,290.91,transport,Metro,expense
+TXN1344,user_123,2026-01-22 10:44:28,588.25,transport,Metro,expense
+TXN1345,user_123,2026-01-22 22:22:39,595.11,transport,Indian Oil,expense
+TXN1346,user_123,2026-01-23 08:04:42,812.33,subscriptions,Gym,expense
+TXN1347,user_123,2026-01-23 18:10:01,4104.93,housing,Landlord,expense
+TXN1348,user_123,2026-01-24 10:04:15,2471.78,shopping,Myntra,expense
+TXN1349,user_123,2026-01-24 08:38:09,4772.6,housing,Maintenance,expense
+TXN1350,user_123,2026-01-24 20:04:36,1304.44,entertainment,BookMyShow,expense
+TXN1351,user_123,2026-01-25 00:00:00,999.0,subscriptions,Amazon Prime,expense
+TXN1352,user_123,2026-01-25 09:01:47,532.33,food,Zomato,expense
+TXN1353,user_123,2026-01-25 16:07:16,340.24,transport,Metro,expense
+TXN1354,user_123,2026-01-26 12:44:58,797.27,transport,Indian Oil,expense
+TXN1355,user_123,2026-01-26 09:28:11,315.13,food,Domino's,expense
+TXN1356,user_123,2026-01-26 18:54:20,115.84,transport,Metro,expense
+TXN1357,user_123,2026-01-27 22:19:54,933.88,food,Zomato,expense
+TXN1358,user_123,2026-01-27 18:11:50,4672.96,shopping,Myntra,expense
+TXN1359,user_123,2026-01-27 11:50:08,141.02,transport,Ola,expense
+TXN1360,user_123,2026-01-28 13:29:51,952.4,food,McDonalds,expense
+TXN1361,user_123,2026-01-28 09:19:25,1455.24,food,Domino's,expense
+TXN1362,user_123,2026-01-29 14:52:36,358.1,transport,Uber,expense
+TXN1363,user_123,2026-01-29 09:28:29,591.82,food,Domino's,expense
+TXN1364,user_123,2026-01-29 21:49:35,146.25,transport,HP Petrol,expense
+TXN1365,user_123,2026-01-30 16:58:55,1080.65,shopping,Amazon,expense
+TXN1366,user_123,2026-01-31 10:20:59,373.71,subscriptions,Spotify,expense
+TXN1367,user_123,2026-02-01 00:00:00,85000.0,salary,Employer Inc,income
+TXN1368,user_123,2026-02-01 12:54:05,1701.02,entertainment,PVR Cinemas,expense
+TXN1369,user_123,2026-02-01 12:08:40,1568.2,food,Local Grocery,expense
+TXN1370,user_123,2026-02-02 10:37:37,426.93,transport,Ola,expense
+TXN1371,user_123,2026-02-02 22:38:21,1062.36,food,McDonalds,expense
+TXN1372,user_123,2026-02-02 09:02:41,1427.67,food,McDonalds,expense
+TXN1373,user_123,2026-02-03 14:39:40,3951.32,shopping,Amazon,expense
+TXN1374,user_123,2026-02-03 12:41:19,520.37,transport,Indian Oil,expense
+TXN1375,user_123,2026-02-04 12:29:04,1775.48,healthcare,Local Clinic,expense
+TXN1376,user_123,2026-02-05 00:00:00,25000.0,housing,Landlord,expense
+TXN1377,user_123,2026-02-05 15:13:21,744.64,food,McDonalds,expense
+TXN1378,user_123,2026-02-06 19:55:22,1208.1,food,Starbucks,expense
+TXN1379,user_123,2026-02-07 09:20:15,1384.45,healthcare,Practo,expense
+TXN1380,user_123,2026-02-08 09:03:18,488.98,food,Starbucks,expense
+TXN1381,user_123,2026-02-09 22:10:52,772.01,transport,Metro,expense
+TXN1382,user_123,2026-02-09 11:48:10,2247.05,entertainment,PVR Cinemas,expense
+TXN1383,user_123,2026-02-09 22:19:31,1560.4,entertainment,BookMyShow,expense
+TXN1384,user_123,2026-02-10 00:00:00,1635.0736425656764,utilities,Jio Fiber,expense
+TXN1385,user_123,2026-02-10 17:22:03,230.55,transport,Uber,expense
+TXN1386,user_123,2026-02-10 21:41:43,1025.3,food,Starbucks,expense
+TXN1387,user_123,2026-02-10 09:27:08,122.01,food,Local Grocery,expense
+TXN1388,user_123,2026-02-11 08:25:03,2314.64,housing,Landlord,expense
+TXN1389,user_123,2026-02-11 14:32:28,1798.71,housing,Maintenance,expense
+TXN1390,user_123,2026-02-11 17:07:08,1633.46,healthcare,Apollo Pharmacy,expense
+TXN1391,user_123,2026-02-12 00:00:00,499.0,subscriptions,Amazon Prime,expense
+TXN1392,user_123,2026-02-12 10:12:38,324.2,transport,HP Petrol,expense
+TXN1393,user_123,2026-02-12 08:08:45,80.19,transport,Metro,expense
+TXN1394,user_123,2026-02-13 22:32:08,161.71,transport,Metro,expense
+TXN1395,user_123,2026-02-13 14:39:47,1160.03,entertainment,PVR Cinemas,expense
+TXN1396,user_123,2026-02-14 16:31:45,1381.77,food,McDonalds,expense
+TXN1397,user_123,2026-02-14 13:21:43,1362.51,food,Swiggy,expense
+TXN1398,user_123,2026-02-14 20:57:46,1876.0,entertainment,Pub/Bar,expense
+TXN1399,user_123,2026-02-15 00:00:00,999.0,subscriptions,Netflix,expense
+TXN1400,user_123,2026-02-15 20:49:37,775.3,transport,HP Petrol,expense
+TXN1401,user_123,2026-02-15 15:10:33,188.66,food,Domino's,expense
+TXN1402,user_123,2026-02-15 14:09:52,3985.73,shopping,Flipkart,expense
+TXN1403,user_123,2026-02-16 11:01:28,575.39,transport,Metro,expense
+TXN1404,user_123,2026-02-17 14:32:49,1171.91,food,McDonalds,expense
+TXN1405,user_123,2026-02-17 19:46:03,2656.61,entertainment,Pub/Bar,expense
+TXN1406,user_123,2026-02-18 18:30:33,470.67,transport,Indian Oil,expense
+TXN1407,user_123,2026-02-19 16:21:34,1541.09,entertainment,PVR Cinemas,expense
+TXN1408,user_123,2026-02-19 18:41:51,4404.44,shopping,Myntra,expense
+TXN1409,user_123,2026-02-20 00:00:00,999.0,subscriptions,Gym,expense
+TXN1410,user_123,2026-02-20 12:14:19,1053.32,entertainment,PVR Cinemas,expense
+TXN1411,user_123,2026-02-21 13:30:22,1196.58,food,McDonalds,expense
+TXN1412,user_123,2026-02-21 12:18:07,2447.59,entertainment,Pub/Bar,expense
+TXN1413,user_123,2026-02-21 14:52:22,2208.62,shopping,Flipkart,expense
+TXN1414,user_123,2026-02-22 09:22:59,1583.15,food,Starbucks,expense
+TXN1415,user_123,2026-02-22 11:12:52,3863.02,shopping,Myntra,expense
+TXN1416,user_123,2026-02-23 17:47:37,1117.73,shopping,Flipkart,expense
+TXN1417,user_123,2026-02-23 16:14:40,1143.53,food,Zomato,expense
+TXN1418,user_123,2026-02-23 19:30:06,747.79,food,Domino's,expense
+TXN1419,user_123,2026-02-24 22:10:26,959.69,food,Domino's,expense
+TXN1420,user_123,2026-02-25 00:00:00,499.0,subscriptions,Gym,expense
+TXN1421,user_123,2026-02-25 13:18:41,1598.8,food,Swiggy,expense
+TXN1422,user_123,2026-02-25 17:14:34,541.54,entertainment,Pub/Bar,expense
+TXN1423,user_123,2026-02-25 22:58:11,4715.01,shopping,H&M,expense
+TXN1424,user_123,2026-02-26 21:25:50,398.12,entertainment,PVR Cinemas,expense
+TXN1425,user_123,2026-02-27 22:18:56,2897.75,entertainment,BookMyShow,expense
+TXN1426,user_123,2026-02-28 22:21:18,1042.68,food,Starbucks,expense
+TXN1427,user_123,2026-03-01 00:00:00,85000.0,salary,Employer Inc,income
+TXN1428,user_123,2026-03-01 10:54:32,2722.61,shopping,H&M,expense
+TXN1429,user_123,2026-03-01 13:10:46,1361.99,food,Starbucks,expense
+TXN1430,user_123,2026-03-01 08:47:21,3733.69,shopping,Myntra,expense
+TXN1431,user_123,2026-03-02 17:54:40,1369.23,shopping,H&M,expense
+TXN1432,user_123,2026-03-02 09:25:42,1385.15,healthcare,Apollo Pharmacy,expense
+TXN1433,user_123,2026-03-02 13:59:15,328.25,food,Swiggy,expense
+TXN1434,user_123,2026-03-03 12:21:19,2510.31,housing,Landlord,expense
+TXN1435,user_123,2026-03-03 11:03:42,667.51,food,Swiggy,expense
+TXN1436,user_123,2026-03-04 16:59:57,738.91,food,Domino's,expense
+TXN1437,user_123,2026-03-04 18:58:18,3606.31,shopping,Myntra,expense
+TXN1438,user_123,2026-03-05 00:00:00,25000.0,housing,Landlord,expense
+TXN1439,user_123,2026-03-05 15:09:29,1594.99,food,Domino's,expense
+TXN1440,user_123,2026-03-05 19:35:58,1308.79,entertainment,PVR Cinemas,expense
+TXN1441,user_123,2026-03-05 21:13:48,4108.98,shopping,Flipkart,expense
+TXN1442,user_123,2026-03-06 09:33:28,4429.11,shopping,Myntra,expense
+TXN1443,user_123,2026-03-06 08:53:35,985.89,food,McDonalds,expense
+TXN1444,user_123,2026-03-06 10:20:54,943.22,food,McDonalds,expense
+TXN1445,user_123,2026-03-07 17:31:05,429.61,food,McDonalds,expense
+TXN1446,user_123,2026-03-07 10:32:26,91.73,transport,Indian Oil,expense
+TXN1447,user_123,2026-03-08 20:19:46,828.82,food,Swiggy,expense
+TXN1448,user_123,2026-03-08 19:13:37,662.34,transport,Uber,expense
+TXN1449,user_123,2026-03-08 09:34:03,645.84,food,Swiggy,expense
+TXN1450,user_123,2026-03-09 20:08:49,746.1,food,Domino's,expense
+TXN1451,user_123,2026-03-09 14:23:57,2043.88,entertainment,PVR Cinemas,expense
+TXN1452,user_123,2026-03-10 00:00:00,2172.8056989940287,utilities,Jio Fiber,expense
+TXN1453,user_123,2026-03-10 21:34:08,1609.48,food,Domino's,expense
+TXN1454,user_123,2026-03-10 16:25:33,206.77,utilities,Electricity Board,expense
+TXN1455,user_123,2026-03-11 20:01:19,2554.02,entertainment,PVR Cinemas,expense
+TXN1456,user_123,2026-03-11 16:24:52,2950.0,shopping,Flipkart,expense
+TXN1457,user_123,2026-03-11 12:12:59,649.33,food,Domino's,expense
+TXN1458,user_123,2026-03-12 00:00:00,199.0,subscriptions,Netflix,expense
+TXN1459,user_123,2026-03-12 22:56:01,624.54,transport,Ola,expense
+TXN1460,user_123,2026-03-12 08:28:38,268.09,food,Domino's,expense
+TXN1461,user_123,2026-03-12 19:02:25,719.04,shopping,H&M,expense
+TXN1462,user_123,2026-03-13 20:03:08,615.79,transport,HP Petrol,expense
+TXN1463,user_123,2026-03-14 17:20:36,1538.3,food,McDonalds,expense
+TXN1464,user_123,2026-03-14 11:19:56,836.54,utilities,Electricity Board,expense
+TXN1465,user_123,2026-03-15 00:00:00,999.0,subscriptions,Spotify,expense
+TXN1466,user_123,2026-03-15 17:56:47,206.26,food,Zomato,expense
+TXN1467,user_123,2026-03-15 15:03:22,2422.4,shopping,H&M,expense
+TXN1468,user_123,2026-03-16 10:19:24,760.31,food,Zomato,expense
+TXN1469,user_123,2026-03-16 21:14:19,2630.83,shopping,Flipkart,expense
+TXN1470,user_123,2026-03-16 16:26:26,2303.9,healthcare,Local Clinic,expense
+TXN1471,user_123,2026-03-17 11:21:41,490.15,food,Swiggy,expense
+TXN1472,user_123,2026-03-17 09:34:46,2587.26,entertainment,BookMyShow,expense
+TXN1473,user_123,2026-03-17 17:38:02,699.61,food,Swiggy,expense
+TXN1474,user_123,2026-03-18 18:35:13,1551.44,healthcare,Practo,expense
+TXN1475,user_123,2026-03-19 22:00:13,399.67,utilities,Electricity Board,expense
+TXN1476,user_123,2026-03-20 00:00:00,999.0,subscriptions,Netflix,expense
+TXN1477,user_123,2026-03-20 11:44:38,1593.09,entertainment,Pub/Bar,expense
+TXN1478,user_123,2026-03-20 16:20:49,1540.86,food,Local Grocery,expense
+TXN1479,user_123,2026-03-20 13:19:16,2901.43,housing,Maintenance,expense
+TXN1480,user_123,2026-03-21 20:46:30,1558.21,entertainment,PVR Cinemas,expense
+TXN1481,user_123,2026-03-21 14:02:36,1300.9,entertainment,BookMyShow,expense
+TXN1482,user_123,2026-03-21 16:59:37,237.31,healthcare,Local Clinic,expense
+TXN1483,user_123,2026-03-22 13:14:24,164.31,transport,HP Petrol,expense
+TXN1484,user_123,2026-03-22 18:43:21,1648.11,entertainment,PVR Cinemas,expense
+TXN1485,user_123,2026-03-22 19:41:47,1323.83,healthcare,Practo,expense
+TXN1486,user_123,2026-03-23 10:08:46,1355.2,food,McDonalds,expense
+TXN1487,user_123,2026-03-23 16:41:03,737.67,transport,HP Petrol,expense
+TXN1488,user_123,2026-03-24 21:42:03,370.96,healthcare,Apollo Pharmacy,expense
+TXN1489,user_123,2026-03-25 00:00:00,499.0,subscriptions,Spotify,expense
+TXN1490,user_123,2026-03-25 08:13:32,1219.05,food,Starbucks,expense
+TXN1491,user_123,2026-03-25 18:59:39,3280.26,housing,Maintenance,expense
+TXN1492,user_123,2026-03-25 16:35:26,570.79,shopping,Amazon,expense
+TXN1493,user_123,2026-03-26 12:01:32,256.06,transport,Indian Oil,expense
+TXN1494,user_123,2026-03-27 10:15:12,262.89,food,McDonalds,expense
+TXN1495,user_123,2026-03-28 20:25:05,667.76,food,Local Grocery,expense
+TXN1496,user_123,2026-03-28 11:44:14,1539.29,entertainment,PVR Cinemas,expense
+TXN1497,user_123,2026-03-28 18:54:41,4315.4,shopping,Amazon,expense
+TXN1498,user_123,2026-03-29 15:03:40,332.88,transport,Uber,expense
+TXN1499,user_123,2026-03-30 14:41:50,896.65,food,Local Grocery,expense
+TXN1500,user_123,2026-03-30 09:57:33,693.47,transport,Uber,expense
+TXN1501,user_123,2026-03-30 19:56:36,1526.69,food,Starbucks,expense
+TXN1502,user_123,2026-03-31 22:17:57,228.91,food,McDonalds,expense
+TXN1503,user_123,2026-03-31 22:54:20,74.68,transport,Uber,expense
+TXN1504,user_123,2026-04-01 00:00:00,85000.0,salary,Employer Inc,income
+TXN1505,user_123,2026-04-01 19:52:25,614.19,transport,Uber,expense
+TXN1506,user_123,2026-04-02 21:54:24,490.26,food,Domino's,expense
+TXN1507,user_123,2026-04-02 20:47:08,398.56,utilities,Water Bill,expense
+TXN1508,user_123,2026-04-03 13:03:06,1284.64,food,Starbucks,expense
+TXN1509,user_123,2026-04-03 17:49:39,231.88,food,McDonalds,expense
+TXN1510,user_123,2026-04-03 08:40:17,3981.0,housing,Maintenance,expense
+TXN1511,user_123,2026-04-04 14:27:11,982.52,food,Domino's,expense
+TXN1512,user_123,2026-04-04 20:39:18,2210.33,shopping,Flipkart,expense
+TXN1513,user_123,2026-04-05 00:00:00,25000.0,housing,Landlord,expense
+TXN1514,user_123,2026-04-05 14:45:50,534.26,food,Domino's,expense
+TXN1515,user_123,2026-04-05 13:06:05,725.76,food,Swiggy,expense
+TXN1516,user_123,2026-04-05 20:17:06,1500.79,entertainment,BookMyShow,expense
+TXN1517,user_123,2026-04-06 16:32:26,819.38,food,Swiggy,expense
+TXN1518,user_123,2026-04-07 17:38:50,985.82,food,Local Grocery,expense
+TXN1519,user_123,2026-04-08 20:05:46,764.95,food,McDonalds,expense
+TXN1520,user_123,2026-04-08 17:33:10,2941.07,entertainment,Pub/Bar,expense
+TXN1521,user_123,2026-04-09 12:31:09,536.8,food,Swiggy,expense
+TXN1522,user_123,2026-04-09 12:30:50,547.91,food,Swiggy,expense
+TXN1523,user_123,2026-04-10 00:00:00,2041.687368434292,utilities,Electricity Board,expense
+TXN1524,user_123,2026-04-10 11:29:06,634.43,subscriptions,Spotify,expense
+TXN1525,user_123,2026-04-10 13:53:39,1609.93,food,Starbucks,expense
+TXN1526,user_123,2026-04-10 13:27:52,957.95,healthcare,Local Clinic,expense
+TXN1527,user_123,2026-04-11 19:12:30,619.01,food,Local Grocery,expense
+TXN1528,user_123,2026-04-11 13:18:47,741.48,food,Domino's,expense
+TXN1529,user_123,2026-04-11 20:15:20,4854.93,shopping,H&M,expense
+TXN1530,user_123,2026-04-12 00:00:00,499.0,subscriptions,Gym,expense
+TXN1531,user_123,2026-04-12 17:34:11,1003.43,food,Domino's,expense
+TXN1532,user_123,2026-04-12 19:29:45,261.91,healthcare,Apollo Pharmacy,expense
+TXN1533,user_123,2026-04-13 09:52:54,4240.77,shopping,H&M,expense
+TXN1534,user_123,2026-04-13 12:15:16,1126.31,shopping,Flipkart,expense
+TXN1535,user_123,2026-04-14 15:38:30,332.74,transport,HP Petrol,expense
+TXN1536,user_123,2026-04-14 22:55:44,429.96,transport,Indian Oil,expense
+TXN1537,user_123,2026-04-14 13:44:57,643.04,transport,HP Petrol,expense
+TXN1538,user_123,2026-04-15 00:00:00,999.0,subscriptions,Netflix,expense
+TXN1539,user_123,2026-04-15 13:10:41,3459.21,shopping,Amazon,expense
+TXN1540,user_123,2026-04-16 14:48:21,2129.17,entertainment,PVR Cinemas,expense
+TXN1541,user_123,2026-04-16 11:32:47,269.09,food,McDonalds,expense
+TXN1542,user_123,2026-04-16 11:28:23,565.75,transport,Indian Oil,expense
+TXN1543,user_123,2026-04-17 16:09:22,3148.65,shopping,Amazon,expense
+TXN1544,user_123,2026-04-17 22:05:07,271.57,transport,Ola,expense
+TXN1545,user_123,2026-04-18 11:33:30,834.45,food,Local Grocery,expense
+TXN1546,user_123,2026-04-18 19:28:20,378.62,transport,Uber,expense
+TXN1547,user_123,2026-04-19 08:54:21,1239.7,food,Domino's,expense
+TXN1548,user_123,2026-04-19 22:47:15,1381.19,food,McDonalds,expense
+TXN1549,user_123,2026-04-20 00:00:00,199.0,subscriptions,Spotify,expense
+TXN1550,user_123,2026-04-20 11:51:25,768.85,transport,Ola,expense
+TXN1551,user_123,2026-04-20 14:01:47,1155.52,food,McDonalds,expense
+TXN1552,user_123,2026-04-21 08:45:13,372.16,transport,Ola,expense
+TXN1553,user_123,2026-04-22 09:36:06,4139.28,shopping,Flipkart,expense
+TXN1554,user_123,2026-04-22 09:16:42,1386.83,housing,Maintenance,expense
+TXN1555,user_123,2026-04-23 14:39:25,1146.19,entertainment,Pub/Bar,expense
+TXN1556,user_123,2026-04-23 15:39:11,672.36,food,Domino's,expense
+TXN1557,user_123,2026-04-23 17:37:05,1838.5,shopping,Flipkart,expense
+TXN1558,user_123,2026-04-24 10:23:44,598.64,food,Zomato,expense
+TXN1559,user_123,2026-04-24 10:36:24,363.68,transport,Indian Oil,expense
+TXN1560,user_123,2026-04-25 00:00:00,199.0,subscriptions,Gym,expense
+TXN1561,user_123,2026-04-25 22:11:35,927.24,subscriptions,Spotify,expense
+TXN1562,user_123,2026-04-25 13:53:28,155.22,transport,HP Petrol,expense
+TXN1563,user_123,2026-04-25 08:31:08,684.22,food,Zomato,expense
+TXN1564,user_123,2026-04-26 15:26:43,1664.68,entertainment,PVR Cinemas,expense
+TXN1565,user_123,2026-04-26 15:10:05,679.92,transport,HP Petrol,expense
+TXN1566,user_123,2026-04-27 08:17:14,1492.38,shopping,Myntra,expense
+TXN1567,user_123,2026-04-28 20:49:31,3045.43,shopping,Amazon,expense
+TXN1568,user_123,2026-04-29 21:23:34,1348.16,food,Swiggy,expense
+TXN1569,user_123,2026-04-29 11:27:06,2486.15,shopping,Flipkart,expense
+TXN1570,user_123,2026-04-29 15:16:22,1705.21,food,Swiggy,expense
+TXN1571,user_123,2026-04-30 20:15:13,205.65,utilities,Water Bill,expense
+TXN1572,user_123,2026-04-30 19:39:40,312.97,transport,Indian Oil,expense
+TXN1573,user_123,2026-05-01 00:00:00,85000.0,salary,Employer Inc,income
+TXN1574,user_123,2026-05-01 21:13:51,806.36,subscriptions,Netflix,expense
+TXN1575,user_123,2026-05-02 16:10:20,1764.88,housing,Maintenance,expense
+TXN1576,user_123,2026-05-02 21:32:57,540.29,food,Domino's,expense
+TXN1577,user_123,2026-05-02 20:50:26,666.09,entertainment,BookMyShow,expense
+TXN1578,user_123,2026-05-03 21:08:15,642.6,entertainment,BookMyShow,expense
+TXN1579,user_123,2026-05-03 20:53:43,4228.17,shopping,H&M,expense
+TXN1580,user_123,2026-05-04 18:26:24,1123.58,food,Starbucks,expense
+TXN1581,user_123,2026-05-04 20:05:25,1382.51,food,McDonalds,expense
+TXN1582,user_123,2026-05-05 00:00:00,25000.0,housing,Landlord,expense
+TXN1583,user_123,2026-05-05 13:29:31,1609.55,food,Local Grocery,expense
+TXN1584,user_123,2026-05-05 21:46:05,701.68,transport,Indian Oil,expense
+TXN1585,user_123,2026-05-05 21:04:50,727.56,subscriptions,Gym,expense
+TXN1586,user_123,2026-05-06 15:17:20,2527.09,entertainment,PVR Cinemas,expense
+TXN1587,user_123,2026-05-07 21:31:50,147.95,transport,Metro,expense
+TXN1588,user_123,2026-05-07 08:06:40,786.03,utilities,Jio Fiber,expense
+TXN1589,user_123,2026-05-08 15:29:00,1486.02,food,Starbucks,expense
+TXN1590,user_123,2026-05-09 22:41:19,2755.4,entertainment,BookMyShow,expense
+TXN1591,user_123,2026-05-10 00:00:00,2811.635053896072,utilities,Jio Fiber,expense
+TXN1592,user_123,2026-05-10 13:42:57,1626.75,shopping,Flipkart,expense
+TXN1593,user_123,2026-05-11 19:48:14,1874.79,housing,Maintenance,expense
+TXN1594,user_123,2026-05-12 00:00:00,999.0,subscriptions,Netflix,expense
+TXN1595,user_123,2026-05-12 09:08:37,456.48,food,Zomato,expense
+TXN1596,user_123,2026-05-12 08:44:21,383.8,transport,Uber,expense
+TXN1597,user_123,2026-05-12 10:30:04,1440.25,entertainment,BookMyShow,expense
+TXN1598,user_123,2026-05-13 09:20:23,1406.7,food,Local Grocery,expense
+TXN1599,user_123,2026-05-13 20:55:08,1354.6,food,Domino's,expense
+TXN1600,user_123,2026-05-14 08:39:41,965.54,food,Zomato,expense
+TXN1601,user_123,2026-05-14 18:47:09,591.82,transport,Indian Oil,expense
+TXN1602,user_123,2026-05-14 11:05:57,498.15,subscriptions,Netflix,expense
+TXN1603,user_123,2026-05-15 00:00:00,199.0,subscriptions,Netflix,expense
+TXN1604,user_123,2026-05-15 14:20:50,2081.91,shopping,Flipkart,expense
+TXN1605,user_123,2026-05-15 11:35:38,1149.13,food,McDonalds,expense
+TXN1606,user_123,2026-05-15 19:01:54,1782.14,shopping,Myntra,expense
+TXN1607,user_123,2026-05-16 19:25:18,558.57,subscriptions,Netflix,expense
+TXN1608,user_123,2026-05-17 15:40:38,134.56,transport,Uber,expense
+TXN1609,user_123,2026-05-18 13:59:20,110.86,utilities,Electricity Board,expense
+TXN1610,user_123,2026-05-18 14:23:34,4275.38,housing,Landlord,expense
+TXN1611,user_123,2026-05-18 20:04:01,4795.04,shopping,Amazon,expense
+TXN1612,user_123,2026-05-19 08:50:25,178.89,food,McDonalds,expense
+TXN1613,user_123,2026-05-20 00:00:00,499.0,subscriptions,Gym,expense
+TXN1614,user_123,2026-05-20 16:34:39,870.93,shopping,Flipkart,expense
+TXN1615,user_123,2026-05-20 16:58:13,613.44,food,Zomato,expense
+TXN1616,user_123,2026-05-21 20:53:41,1058.79,food,Domino's,expense
+TXN1617,user_123,2026-05-21 14:46:54,379.15,subscriptions,Spotify,expense
+TXN1618,user_123,2026-05-21 14:07:29,253.71,food,McDonalds,expense
+TXN1619,user_123,2026-05-22 18:47:11,1187.53,food,Swiggy,expense
+TXN1620,user_123,2026-05-22 08:10:31,335.95,food,Local Grocery,expense
+TXN1621,user_123,2026-05-22 19:16:10,637.24,transport,Metro,expense
+TXN1622,user_123,2026-05-23 19:56:07,2208.96,healthcare,Apollo Pharmacy,expense
+TXN1623,user_123,2026-05-24 09:16:45,1034.35,entertainment,Pub/Bar,expense
+TXN1624,user_123,2026-05-24 16:23:03,2732.66,shopping,H&M,expense
+TXN1625,user_123,2026-05-25 00:00:00,999.0,subscriptions,Spotify,expense
+TXN1626,user_123,2026-05-25 22:36:43,1362.17,food,Domino's,expense
+TXN1627,user_123,2026-05-25 08:02:54,1309.68,food,Swiggy,expense
+TXN1628,user_123,2026-05-26 22:09:11,702.42,food,Swiggy,expense
+TXN1629,user_123,2026-05-27 18:26:14,1842.25,healthcare,Practo,expense
+TXN1630,user_123,2026-05-27 13:17:52,1593.5,food,Swiggy,expense
+TXN1631,user_123,2026-05-27 18:57:03,139.55,transport,Ola,expense
+TXN1632,user_123,2026-05-28 14:04:56,2457.25,healthcare,Practo,expense
+TXN1633,user_123,2026-05-29 09:35:29,1898.14,shopping,Amazon,expense
+TXN1634,user_123,2026-05-29 20:19:47,1812.18,housing,Landlord,expense
+TXN1635,user_123,2026-05-30 20:49:12,4873.36,housing,Landlord,expense
+TXN1636,user_123,2026-05-30 08:14:34,1622.51,food,Local Grocery,expense
+TXN1637,user_123,2026-05-31 13:00:48,2668.44,entertainment,Pub/Bar,expense
+TXN1638,user_123,2026-05-31 12:06:13,3821.37,housing,Landlord,expense
+TXN1639,user_123,2026-05-31 10:45:17,770.89,transport,Uber,expense
+TXN1640,user_123,2026-06-01 00:00:00,85000.0,salary,Employer Inc,income
+TXN1641,user_123,2026-06-01 16:26:44,2722.68,entertainment,PVR Cinemas,expense
+TXN1642,user_123,2026-06-02 09:32:08,529.24,entertainment,Pub/Bar,expense
+TXN1643,user_123,2026-06-02 17:03:27,372.11,healthcare,Local Clinic,expense
+TXN1644,user_123,2026-06-03 13:59:51,538.32,food,Starbucks,expense
+TXN1645,user_123,2026-06-04 15:17:14,950.38,healthcare,Apollo Pharmacy,expense
+TXN1646,user_123,2026-06-04 20:37:06,667.5,entertainment,BookMyShow,expense
+TXN1647,user_123,2026-06-04 13:26:07,844.1,food,McDonalds,expense
+TXN1648,user_123,2026-06-05 00:00:00,25000.0,housing,Landlord,expense
+TXN1649,user_123,2026-06-05 12:29:16,860.62,entertainment,BookMyShow,expense
+TXN1650,user_123,2026-06-05 12:52:45,1424.84,food,Domino's,expense
+TXN1651,user_123,2026-06-06 13:09:05,1471.45,food,Domino's,expense
+TXN1652,user_123,2026-06-06 16:03:43,692.74,food,Local Grocery,expense
+TXN1653,user_123,2026-06-06 08:25:54,1722.41,food,Starbucks,expense
+TXN1654,user_123,2026-06-07 15:06:51,774.66,healthcare,Apollo Pharmacy,expense
+TXN1655,user_123,2026-06-07 20:14:08,215.95,food,Zomato,expense
+TXN1656,user_123,2026-06-07 18:41:05,1305.05,entertainment,Pub/Bar,expense
+TXN1657,user_123,2026-06-08 08:04:12,1435.22,food,Domino's,expense
+TXN1658,user_123,2026-06-08 22:54:53,146.59,transport,Metro,expense
+TXN1659,user_123,2026-06-08 08:10:59,1645.49,food,McDonalds,expense
+TXN1660,user_123,2026-06-09 08:24:43,1108.5,healthcare,Practo,expense
+TXN1661,user_123,2026-06-09 10:17:17,464.7,food,Starbucks,expense
+TXN1662,user_123,2026-06-10 00:00:00,2825.1356983404394,utilities,Electricity Board,expense
+TXN1663,user_123,2026-06-10 12:31:26,321.21,subscriptions,Gym,expense
+TXN1664,user_123,2026-06-10 10:26:12,570.63,food,Domino's,expense
+TXN1665,user_123,2026-06-10 18:51:34,573.23,utilities,Electricity Board,expense
+TXN1666,user_123,2026-06-11 16:50:31,2116.0,shopping,Myntra,expense
+TXN1667,user_123,2026-06-11 14:17:11,1656.46,entertainment,BookMyShow,expense
+TXN1668,user_123,2026-06-12 00:00:00,499.0,subscriptions,Spotify,expense
+TXN1669,user_123,2026-06-12 08:51:30,800.68,utilities,Water Bill,expense
+TXN1670,user_123,2026-06-13 10:06:15,2499.09,healthcare,Local Clinic,expense
+TXN1671,user_123,2026-06-13 20:58:47,984.57,food,Swiggy,expense
+TXN1672,user_123,2026-06-14 14:22:59,4921.99,shopping,Flipkart,expense
+TXN1673,user_123,2026-06-15 00:00:00,199.0,subscriptions,Spotify,expense
+TXN1674,user_123,2026-06-15 13:58:37,1318.41,food,Swiggy,expense
+TXN1675,user_123,2026-06-15 17:36:09,2082.57,shopping,Flipkart,expense
+TXN1676,user_123,2026-06-15 15:34:19,2063.92,healthcare,Apollo Pharmacy,expense
+TXN1677,user_123,2026-06-16 17:14:01,207.9,food,McDonalds,expense
+TXN1678,user_123,2026-06-16 17:12:51,298.8,transport,Ola,expense
+TXN1679,user_123,2026-06-17 21:55:20,4634.51,shopping,Amazon,expense
+TXN1680,user_123,2026-06-17 22:09:49,1072.69,food,Swiggy,expense
+TXN1681,user_123,2026-06-18 13:45:42,964.5,utilities,Jio Fiber,expense
+TXN1682,user_123,2026-06-18 13:08:10,302.42,transport,Indian Oil,expense
+TXN1683,user_123,2026-06-18 18:20:11,4822.98,shopping,Myntra,expense
+TXN1684,user_123,2026-06-19 14:19:46,4165.04,shopping,Myntra,expense
+TXN1685,user_123,2026-06-20 00:00:00,199.0,subscriptions,Spotify,expense
+TXN1686,user_123,2026-06-20 17:25:54,1262.59,food,McDonalds,expense
+TXN1687,user_123,2026-06-20 22:51:39,1099.97,food,Zomato,expense
+TXN1688,user_123,2026-06-20 15:09:21,968.5,shopping,Amazon,expense
+TXN1689,user_123,2026-06-21 18:56:05,1937.83,housing,Maintenance,expense
+TXN1690,user_123,2026-06-22 19:04:22,459.33,food,Local Grocery,expense
+TXN1691,user_123,2026-06-22 08:24:28,3741.86,shopping,H&M,expense
+TXN1692,user_123,2026-06-23 14:22:34,543.77,utilities,Jio Fiber,expense
+TXN1693,user_123,2026-06-24 17:41:48,2014.08,healthcare,Local Clinic,expense
+TXN1694,user_123,2026-06-25 00:00:00,199.0,subscriptions,Spotify,expense
+TXN1695,user_123,2026-06-25 12:01:20,1500.78,food,Local Grocery,expense
+TXN1696,user_123,2026-06-25 10:56:24,500.34,entertainment,BookMyShow,expense
+TXN1697,user_123,2026-06-26 09:21:38,1658.75,food,McDonalds,expense
+TXN1698,user_123,2026-06-26 14:41:10,734.05,utilities,Water Bill,expense
+TXN1699,user_123,2026-06-26 09:21:13,241.39,utilities,Electricity Board,expense
+TXN1700,user_123,2026-06-27 19:34:16,3749.17,shopping,Myntra,expense
+TXN1701,user_123,2026-06-27 14:36:35,274.08,food,Starbucks,expense
+TXN1702,user_123,2026-06-28 09:18:52,123.29,food,Domino's,expense
+TXN1703,user_123,2026-06-29 08:13:10,279.71,subscriptions,Amazon Prime,expense
+TXN1704,user_123,2026-06-29 09:19:50,1578.64,entertainment,PVR Cinemas,expense
+TXN1705,user_123,2026-06-29 12:05:41,721.16,transport,HP Petrol,expense
+TXN1706,user_123,2026-06-30 13:11:28,1569.46,food,Swiggy,expense
+TXN1707,user_123,2026-06-30 11:53:17,879.9,food,McDonalds,expense
+TXN1708,user_123,2026-07-01 00:00:00,85000.0,salary,Employer Inc,income
+TXN1709,user_123,2026-07-01 09:05:42,1260.03,food,Local Grocery,expense
+TXN1710,user_123,2026-07-02 11:35:03,617.34,transport,Indian Oil,expense
+TXN1711,user_123,2026-07-02 16:43:55,1162.85,healthcare,Practo,expense
+TXN1712,user_123,2026-07-02 12:05:25,226.73,transport,Uber,expense
+TXN1713,user_123,2026-07-03 17:43:39,437.61,transport,Ola,expense
+TXN1714,user_123,2026-07-03 10:10:13,1360.93,food,Zomato,expense
+TXN1715,user_123,2026-07-03 18:27:12,812.67,food,Domino's,expense
+TXN1716,user_123,2026-07-04 22:46:58,996.29,entertainment,BookMyShow,expense
+TXN1717,user_123,2026-07-05 00:00:00,25000.0,housing,Landlord,expense
+TXN1718,user_123,2026-07-05 13:54:17,348.02,transport,HP Petrol,expense
+TXN1719,user_123,2026-07-06 19:39:37,333.38,entertainment,Pub/Bar,expense
+TXN1720,user_123,2026-07-06 10:09:36,1006.33,shopping,Amazon,expense
+TXN1721,user_123,2026-07-07 12:55:34,125.74,transport,Metro,expense
+TXN1722,user_123,2026-07-08 17:38:30,1195.53,food,Swiggy,expense
+TXN1723,user_123,2026-07-08 17:38:43,780.98,food,Domino's,expense
+TXN1724,user_123,2026-07-09 13:44:15,1582.78,food,Swiggy,expense
+TXN1725,user_123,2026-07-09 22:23:01,4643.76,shopping,Myntra,expense
+TXN1726,user_123,2026-07-10 00:00:00,2726.0788879579163,utilities,Jio Fiber,expense
+TXN1727,user_123,2026-07-10 19:43:06,927.78,food,Zomato,expense
+TXN1728,user_123,2026-07-10 15:49:52,1723.0,food,Local Grocery,expense
+TXN1729,user_123,2026-07-11 09:12:28,3222.41,shopping,Flipkart,expense
+TXN1730,user_123,2026-07-11 15:48:33,1399.36,entertainment,PVR Cinemas,expense
+TXN1731,user_123,2026-07-12 00:00:00,199.0,subscriptions,Spotify,expense
+TXN1732,user_123,2026-07-12 10:49:54,953.67,food,McDonalds,expense
+TXN1733,user_123,2026-07-13 21:12:53,435.94,food,Swiggy,expense
+TXN1734,user_123,2026-07-13 22:23:45,871.04,food,Zomato,expense
+TXN1735,user_123,2026-07-13 16:25:40,1476.72,food,Swiggy,expense
+TXN1736,user_123,2026-07-14 17:28:11,732.8,food,Starbucks,expense
+TXN1737,user_123,2026-07-14 10:53:57,312.32,transport,Metro,expense
+TXN1738,user_123,2026-07-14 12:01:24,3599.83,shopping,Amazon,expense
+TXN1739,user_123,2026-07-15 00:00:00,199.0,subscriptions,Spotify,expense
+TXN1740,user_123,2026-07-15 12:41:26,709.93,subscriptions,Netflix,expense
+TXN1741,user_123,2026-07-16 18:11:38,1624.2,food,Swiggy,expense
+TXN1742,user_123,2026-07-16 12:45:45,1123.24,food,Domino's,expense
+TXN1743,user_123,2026-07-16 21:22:29,1597.71,food,Local Grocery,expense
+TXN1744,user_123,2026-07-17 21:39:25,557.9,transport,HP Petrol,expense
+TXN1745,user_123,2026-07-18 21:53:23,1771.11,food,McDonalds,expense
+TXN1746,user_123,2026-07-19 18:06:30,1772.05,shopping,Amazon,expense
+TXN1747,user_123,2026-07-19 13:55:17,575.68,food,Local Grocery,expense
+TXN1748,user_123,2026-07-19 18:19:12,4784.85,shopping,Flipkart,expense
+TXN1749,user_123,2026-07-20 00:00:00,999.0,subscriptions,Spotify,expense
+TXN1750,user_123,2026-07-20 17:25:42,2045.44,healthcare,Practo,expense
+TXN1751,user_123,2026-07-21 15:18:16,160.46,food,Starbucks,expense
+TXN1752,user_123,2026-07-21 17:45:36,602.55,transport,Ola,expense
+TXN1753,user_123,2026-07-21 18:34:40,1299.8,food,Starbucks,expense
+TXN1754,user_123,2026-07-22 10:53:42,1850.88,housing,Landlord,expense
+TXN1755,user_123,2026-07-22 19:16:46,898.43,food,McDonalds,expense
+TXN1756,user_123,2026-07-22 18:57:21,1323.81,shopping,Amazon,expense
+TXN1757,user_123,2026-07-23 12:26:50,3848.94,housing,Maintenance,expense
+TXN1758,user_123,2026-07-24 21:07:30,606.16,food,Swiggy,expense
+TXN1759,user_123,2026-07-24 17:04:30,625.22,utilities,Electricity Board,expense
+TXN1760,user_123,2026-07-25 00:00:00,999.0,subscriptions,Netflix,expense
+TXN1761,user_123,2026-07-25 08:55:54,273.77,transport,Ola,expense
+TXN1762,user_123,2026-07-25 14:36:57,450.87,food,Starbucks,expense
+TXN1763,user_123,2026-07-25 10:49:05,1549.48,food,Starbucks,expense
+TXN1764,user_123,2026-07-26 18:03:00,1295.71,shopping,H&M,expense
+TXN1765,user_123,2026-07-26 10:36:48,1382.2,food,Zomato,expense
+TXN1766,user_123,2026-07-27 10:39:27,4008.89,shopping,H&M,expense
+TXN1767,user_123,2026-07-27 14:00:02,774.0,transport,HP Petrol,expense
+TXN1768,user_123,2026-07-28 22:20:48,4775.31,shopping,Flipkart,expense
+TXN1769,user_123,2026-07-29 11:14:44,3320.09,shopping,Myntra,expense
+TXN1770,user_123,2026-07-30 17:19:10,756.69,food,Swiggy,expense
+TXN1771,user_123,2026-07-30 12:29:46,885.87,healthcare,Local Clinic,expense
+TXN1772,user_123,2026-07-31 18:08:21,375.25,transport,Indian Oil,expense
+TXN1773,user_123,2026-07-31 22:58:51,1347.92,housing,Maintenance,expense
+TXN1774,user_123,2026-07-31 10:13:46,492.1,food,Swiggy,expense
+TXN1775,user_123,2026-08-01 00:00:00,85000.0,salary,Employer Inc,income
+TXN1776,user_123,2026-08-01 19:41:50,142.37,transport,Uber,expense
+TXN1777,user_123,2026-08-01 20:34:39,3381.44,housing,Landlord,expense
+TXN1778,user_123,2026-08-01 09:41:53,715.82,shopping,Amazon,expense
+TXN1779,user_123,2026-08-02 14:07:35,2375.49,shopping,Myntra,expense
+TXN1780,user_123,2026-08-03 18:40:00,1424.73,shopping,Myntra,expense
+TXN1781,user_123,2026-08-03 16:17:39,125.73,transport,HP Petrol,expense
+TXN1782,user_123,2026-08-04 09:32:46,1503.73,food,McDonalds,expense
+TXN1783,user_123,2026-08-04 09:31:12,309.12,food,McDonalds,expense
+TXN1784,user_123,2026-08-04 16:12:22,557.47,food,Domino's,expense
+TXN1785,user_123,2026-08-05 00:00:00,25000.0,housing,Landlord,expense
+TXN1786,user_123,2026-08-05 15:58:13,184.84,food,Domino's,expense
+TXN1787,user_123,2026-08-05 08:00:42,1192.63,entertainment,BookMyShow,expense
+TXN1788,user_123,2026-08-06 10:05:49,1738.75,healthcare,Local Clinic,expense
+TXN1789,user_123,2026-08-07 12:41:14,955.81,shopping,H&M,expense
+TXN1790,user_123,2026-08-08 21:11:55,202.92,food,Swiggy,expense
+TXN1791,user_123,2026-08-08 18:20:27,1272.58,entertainment,Pub/Bar,expense
+TXN1792,user_123,2026-08-09 08:00:54,1386.15,food,Zomato,expense
+TXN1793,user_123,2026-08-10 00:00:00,2495.032541236266,utilities,Electricity Board,expense
+TXN1794,user_123,2026-08-10 17:17:56,2469.72,housing,Landlord,expense
+TXN1795,user_123,2026-08-10 09:25:25,2042.25,housing,Maintenance,expense
+TXN1796,user_123,2026-08-11 15:51:26,1786.78,healthcare,Local Clinic,expense
+TXN1797,user_123,2026-08-11 10:44:46,250.1,utilities,Electricity Board,expense
+TXN1798,user_123,2026-08-12 00:00:00,199.0,subscriptions,Netflix,expense
+TXN1799,user_123,2026-08-12 17:43:28,1603.22,entertainment,BookMyShow,expense
+TXN1800,user_123,2026-08-12 17:01:55,801.25,subscriptions,Spotify,expense
+TXN1801,user_123,2026-08-13 14:28:02,604.93,entertainment,BookMyShow,expense
+TXN1802,user_123,2026-08-13 19:55:43,645.55,food,McDonalds,expense
+TXN1803,user_123,2026-08-14 18:55:21,473.76,transport,HP Petrol,expense
+TXN1804,user_123,2026-08-14 09:27:42,575.44,transport,Ola,expense
+TXN1805,user_123,2026-08-14 18:24:09,547.78,transport,HP Petrol,expense
+TXN1806,user_123,2026-08-15 00:00:00,999.0,subscriptions,Netflix,expense
+TXN1807,user_123,2026-08-15 21:30:54,1206.17,shopping,H&M,expense
+TXN1808,user_123,2026-08-16 11:21:17,943.81,food,Swiggy,expense
+TXN1809,user_123,2026-08-17 14:52:15,1198.58,food,Swiggy,expense
+TXN1810,user_123,2026-08-17 15:05:54,650.95,transport,Indian Oil,expense
+TXN1811,user_123,2026-08-17 15:47:41,139.03,transport,Uber,expense
+TXN1812,user_123,2026-08-18 16:00:52,76.87,transport,Uber,expense
+TXN1813,user_123,2026-08-19 22:32:35,2021.35,entertainment,BookMyShow,expense
+TXN1814,user_123,2026-08-19 13:23:52,2552.94,shopping,Amazon,expense
+TXN1815,user_123,2026-08-19 13:35:49,2141.93,healthcare,Local Clinic,expense
+TXN1816,user_123,2026-08-20 00:00:00,999.0,subscriptions,Gym,expense
+TXN1817,user_123,2026-08-20 09:06:48,3721.61,shopping,Flipkart,expense
+TXN1818,user_123,2026-08-20 18:51:18,716.31,food,McDonalds,expense
+TXN1819,user_123,2026-08-20 08:57:10,576.57,transport,Indian Oil,expense
+TXN1820,user_123,2026-08-21 14:06:16,1907.78,healthcare,Local Clinic,expense
