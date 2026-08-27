@@ -159,10 +159,10 @@ export const Dashboard = () => {
       {/* KPI Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
         {[
-          { title: 'Total Balance', value: `₹${(summary?.net_savings || 0).toLocaleString()}`, icon: IndianRupee, color: 'blue' },
-          { title: 'Total Income', value: `₹${(summary?.total_income || 0).toLocaleString()}`, icon: TrendingUp, color: 'emerald' },
-          { title: 'Total Expenses', value: `₹${(summary?.total_expenses || 0).toLocaleString()}`, icon: TrendingDown, color: 'red' },
-          { title: 'Savings Rate', value: `${summary?.savings_rate || 0}%`, icon: PiggyBank, color: 'indigo' },
+          { title: 'Total Balance', value: `₹${(summary?.net_savings || 0).toLocaleString('en-IN', { maximumFractionDigits: 0 })}`, icon: IndianRupee, color: 'blue' },
+          { title: 'Total Income', value: `₹${(summary?.total_income || 0).toLocaleString('en-IN', { maximumFractionDigits: 0 })}`, icon: TrendingUp, color: 'emerald' },
+          { title: 'Total Expenses', value: `₹${(summary?.total_expenses || 0).toLocaleString('en-IN', { maximumFractionDigits: 0 })}`, icon: TrendingDown, color: 'red' },
+          { title: 'Savings Rate', value: `${(summary?.savings_rate || 0).toFixed(1)}%`, icon: PiggyBank, color: 'indigo' },
           { title: 'Active Goals', value: `${goalSummary?.active_goals || 0}`, icon: Target, color: 'purple' },
         ].map((stat, i) => (
           <motion.div key={i} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }}>
@@ -171,9 +171,9 @@ export const Dashboard = () => {
                 bg-${stat.color}-100 text-${stat.color}-600 dark:bg-${stat.color}-900/30 dark:text-${stat.color}-400`}>
                 <stat.icon size={26} />
               </div>
-              <div>
-                <p className="text-sm text-slate-500 dark:text-slate-400 font-medium mb-1">{stat.title}</p>
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-100">{stat.value}</h3>
+              <div className="min-w-0 flex-1">
+                <p className="text-sm text-slate-500 dark:text-slate-400 font-medium mb-1 truncate">{stat.title}</p>
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-100 truncate" title={stat.value}>{stat.value}</h3>
               </div>
             </Card>
           </motion.div>
