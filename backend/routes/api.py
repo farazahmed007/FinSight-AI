@@ -127,11 +127,24 @@ def handle_query(data: dict, user_id: str = Depends(require_auth)):
         if category:
             recs = [r for r in recs if r.get('category') == category]
             
+        message = "You don't have any specific recommendations right now."
+        if len(recs) > 0:
+            top_rec = recs[0]
+            if top_rec['severity'] == 'high':
+                message = f"I've found something that needs your attention: {top_rec['message']} {top_rec['suggested_action']}"
+            elif top_rec['severity'] == 'medium':
+                message = f"Here is a tip for you: {top_rec['message']} {top_rec['suggested_action']}"
+            else:
+                message = f"{top_rec['message']} Keep up the good work!"
+            
+            if len(recs) > 1:
+                message += f" I've also found {len(recs) - 1} other recommendation(s) for you."
+            
         return {
             "intent": intent,
             "category": category,
             "recommendations": recs,
-            "message": f"Here are your recommendations{' for ' + category if category else ''}."
+            "message": message
         }
         
     elif intent in ['GOAL_SUMMARY', 'GOAL_PROGRESS', 'GOAL_REMAINING', 'GOAL_SAVINGS_REQUIRED', 'GOAL_STATUS', 'GOAL_COMPLETION', 'GOAL_RECOMMENDATION']:

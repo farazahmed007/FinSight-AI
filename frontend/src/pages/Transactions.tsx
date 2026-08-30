@@ -4,6 +4,7 @@ import { getTransactions } from '../services/api';
 import { Loader2, Search, Filter, ArrowDownRight, ArrowUpRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { cn } from '../utils/cn';
+import { formatCurrency } from '../utils/formatters';
 
 export const Transactions = () => {
   const [transactions, setTransactions] = useState<any[]>([]);
@@ -107,7 +108,7 @@ export const Transactions = () => {
                         "px-6 py-4 text-right font-bold text-base",
                         isIncome ? "text-emerald-600 dark:text-emerald-400" : "text-slate-900 dark:text-slate-100"
                       )}>
-                        {isIncome ? '+' : '-'}₹{Math.abs(tx.amount).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                        {isIncome ? '+' : '-'}{formatCurrency(Math.abs(tx.amount))}
                       </td>
                     </motion.tr>
                   );

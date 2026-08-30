@@ -107,12 +107,12 @@ def test_spending_control_score():
 def test_stability_score():
     now = datetime.now()
     df = pd.DataFrame([
-        {'timestamp': now, 'type': 'income', 'amount': 1000},
-        {'timestamp': now - timedelta(days=30), 'type': 'income', 'amount': 1000},
-        {'timestamp': now - timedelta(days=60), 'type': 'income', 'amount': 1000},
-        {'timestamp': now, 'type': 'expense', 'amount': 500},
-        {'timestamp': now - timedelta(days=30), 'type': 'expense', 'amount': 500},
-        {'timestamp': now - timedelta(days=60), 'type': 'expense', 'amount': 500},
+        {'timestamp': datetime(2026, 8, 15), 'type': 'income', 'amount': 1000},
+        {'timestamp': datetime(2026, 7, 15), 'type': 'income', 'amount': 1000},
+        {'timestamp': datetime(2026, 6, 15), 'type': 'income', 'amount': 1000},
+        {'timestamp': datetime(2026, 8, 15), 'type': 'expense', 'amount': 500},
+        {'timestamp': datetime(2026, 7, 15), 'type': 'expense', 'amount': 500},
+        {'timestamp': datetime(2026, 6, 15), 'type': 'expense', 'amount': 500},
     ])
     engine = FinancialHealthEngine("test_user", df)
     score = engine.calculate_stability_score()

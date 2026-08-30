@@ -10,10 +10,7 @@ interface CreateBudgetModalProps {
   selectedMonth: string;
 }
 
-const COMMON_CATEGORIES = [
-  'food', 'housing', 'transport', 'shopping', 
-  'entertainment', 'utilities', 'healthcare', 'subscriptions', 'other'
-];
+import { COMMON_CATEGORIES } from '../../utils/constants';
 
 export function CreateBudgetModal({ isOpen, onClose, onSubmit, editingCategory, selectedMonth }: CreateBudgetModalProps) {
   const [category, setCategory] = useState('');

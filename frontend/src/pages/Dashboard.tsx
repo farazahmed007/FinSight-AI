@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Card } from '../components/Card';
 import { getAnalyticsSummary, getAnalyticsMonthly, getAnalyticsCategories, getBudgetSummary, getGoalSummary, getFinancialHealth } from '../services/api';
+import { formatCurrency } from '../utils/formatters';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 import { IndianRupee, TrendingUp, TrendingDown, PiggyBank, ReceiptText, Activity, Sparkles, Bell, Target, ArrowRight, BarChart3 } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -159,9 +160,9 @@ export const Dashboard = () => {
       {/* KPI Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
         {[
-          { title: 'Total Balance', value: `₹${(summary?.net_savings || 0).toLocaleString('en-IN', { maximumFractionDigits: 0 })}`, icon: IndianRupee, color: 'blue' },
-          { title: 'Total Income', value: `₹${(summary?.total_income || 0).toLocaleString('en-IN', { maximumFractionDigits: 0 })}`, icon: TrendingUp, color: 'emerald' },
-          { title: 'Total Expenses', value: `₹${(summary?.total_expenses || 0).toLocaleString('en-IN', { maximumFractionDigits: 0 })}`, icon: TrendingDown, color: 'red' },
+          { title: 'Total Balance', value: formatCurrency(summary?.net_savings || 0), icon: IndianRupee, color: 'blue' },
+          { title: 'Total Income', value: formatCurrency(summary?.total_income || 0), icon: TrendingUp, color: 'emerald' },
+          { title: 'Total Expenses', value: formatCurrency(summary?.total_expenses || 0), icon: TrendingDown, color: 'red' },
           { title: 'Savings Rate', value: `${(summary?.savings_rate || 0).toFixed(1)}%`, icon: PiggyBank, color: 'indigo' },
           { title: 'Active Goals', value: `${goalSummary?.active_goals || 0}`, icon: Target, color: 'purple' },
         ].map((stat, i) => (

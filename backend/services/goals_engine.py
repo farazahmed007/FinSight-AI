@@ -11,7 +11,7 @@ class GoalsEngine:
             if not pd.api.types.is_datetime64_any_dtype(self.transactions_df['timestamp']):
                 self.transactions_df['timestamp'] = pd.to_datetime(self.transactions_df['timestamp'])
 
-    def _calculate_metrics(self, goal: dict) -> dict:
+    def _calculate_metrics(self, goal: dict, active_goals_count: int = 1) -> dict:
         target_amount = float(goal['target_amount'])
         current_amount = float(goal['current_amount'])
         target_date_str = goal['target_date']
@@ -39,8 +39,13 @@ class GoalsEngine:
             net_savings = max(0.0, float(income - expense))
             
             # Average per month over the last 3 months
-            # (In a real app we might allocate net savings across active goals, but here we just take the total pace)
-            actual_monthly_savings = net_savings / 3.0
+            total_monthly_savings = net_savings / 3.0
+            
+            # Divide savings evenly among active goals
+            if active_goals_count > 0:
+                actual_monthly_savings = total_monthly_savings / active_goals_count
+            else:
+                actual_monthly_savings = total_monthly_savings
             
         # Projected completion date
         projected_completion_date = None
@@ -88,8 +93,12 @@ class GoalsEngine:
         conn.close()
         
         goals = [dict(row) for row in rows]
+        
+        # Determine number of active (non-completed) goals
+        active_count = sum(1 for g in goals if max(0.0, float(g['target_amount']) - float(g['current_amount'])) > 0)
+        
         for g in goals:
-            self._calculate_metrics(g)
+            self._calculate_metrics(g, active_goals_count=active_count)
             
         return goals
 
@@ -102,7 +111,17 @@ class GoalsEngine:
         
         if row:
             goal = dict(row)
-            return self._calculate_metrics(goal)
+            
+            # We need to know total active goals to calculate pace for this single goal
+            conn_temp = get_db_connection()
+            cursor_temp = conn_temp.cursor()
+            cursor_temp.execute("SELECT target_amount, current_amount FROM financial_goals")
+            all_rows = cursor_temp.fetchall()
+            active_count = sum(1 for r in all_rows if max(0.0, float(r['target_amount']) - float(r['current_amount'])) > 0)
+            conn_temp.close()
+            
+            self._calculate_metrics(goal, active_goals_count=active_count)
+            return goal
         return None
 
     def create_goal(self, data: dict):

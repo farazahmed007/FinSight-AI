@@ -24,7 +24,7 @@ def get_all_goals(user_id: str = Depends(require_auth)):
 @goals_bp.post("", response_model=GoalResponse, status_code=status.HTTP_201_CREATED, tags=["Goals"])
 def create_goal(goal: GoalCreate, user_id: str = Depends(require_auth)):
     engine = get_engine(user_id)
-    new_goal = engine.create_goal(goal.dict(exclude_unset=True))
+    new_goal = engine.create_goal(goal.model_dump(exclude_unset=True))
     if not new_goal:
         raise HTTPException(status_code=400, detail="Could not create goal")
     return new_goal
@@ -46,7 +46,7 @@ def update_goal(goal_id: int, goal: GoalUpdate, user_id: str = Depends(require_a
     if not existing:
         raise HTTPException(status_code=404, detail="Goal not found")
         
-    updated = engine.update_goal(goal_id, goal.dict(exclude_unset=True))
+    updated = engine.update_goal(goal_id, goal.model_dump(exclude_unset=True))
     if not updated:
         raise HTTPException(status_code=400, detail="Failed to update goal")
     return updated

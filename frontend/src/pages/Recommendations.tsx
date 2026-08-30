@@ -1,13 +1,29 @@
 import { useEffect, useState } from 'react';
 import { Card } from '../components/Card';
 import { getRecommendations } from '../services/api';
-import { AlertCircle, CheckCircle, Info, Loader2, Zap } from 'lucide-react';
+import { X, ArrowRight, AlertCircle, CheckCircle, Info, Loader2, Zap } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '../utils/cn';
+import { useNavigate } from 'react-router-dom';
 
 export const Recommendations = () => {
   const [recommendations, setRecommendations] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
+
+  const handleDismiss = (index: number) => {
+    setRecommendations(prev => prev.filter((_, i) => i !== index));
+  };
+  
+  const handleAction = (rec: any) => {
+    if (rec.suggested_action.toLowerCase().includes('what-if') || rec.suggested_action.toLowerCase().includes('simulate')) {
+      navigate('/planning');
+    } else if (rec.type === 'budget_alert') {
+      navigate('/dashboard');
+    } else {
+      navigate('/planning');
+    }
+  };
 
   useEffect(() => {
     const fetchRecs = async () => {
@@ -116,11 +132,33 @@ export const Recommendations = () => {
                     'text-emerald-700/80 dark:text-emerald-400/80'
                   )}>{rec.reason}</p>
                   
-                  <div className="bg-white/80 dark:bg-slate-900/50 p-4 rounded-xl font-medium text-slate-800 dark:text-slate-200 border border-slate-200/50 dark:border-slate-700/50 shadow-sm flex items-start gap-3">
-                    <span className="text-slate-400 mt-0.5">Action:</span>
-                    <span>{rec.suggested_action}</span>
+                  <div className="bg-white/80 dark:bg-slate-900/50 p-4 rounded-xl font-medium text-slate-800 dark:text-slate-200 border border-slate-200/50 dark:border-slate-700/50 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
+                      <span className="text-slate-400 mt-0.5 sm:mt-0 uppercase text-xs tracking-wider">Action</span>
+                      <span>{rec.suggested_action}</span>
+                    </div>
+                    
+                    <button 
+                      onClick={() => handleAction(rec)}
+                      className={cn("shrink-0 px-4 py-2 rounded-lg font-bold flex items-center gap-2 transition-colors",
+                        rec.severity === 'high' ? 'bg-red-600 hover:bg-red-700 text-white' :
+                        rec.severity === 'medium' ? 'bg-amber-600 hover:bg-amber-700 text-white' :
+                        'bg-emerald-600 hover:bg-emerald-700 text-white'
+                      )}
+                    >
+                      <span>Take Action</span>
+                      <ArrowRight size={16} />
+                    </button>
                   </div>
                 </div>
+                
+                <button 
+                  onClick={() => handleDismiss(i)}
+                  className="absolute top-4 right-4 p-2 rounded-full text-slate-400 hover:text-slate-600 hover:bg-slate-100 dark:hover:text-slate-300 dark:hover:bg-slate-800 transition-colors z-20"
+                  title="Dismiss this recommendation"
+                >
+                  <X size={20} />
+                </button>
               </motion.div>
             ))}
           </AnimatePresence>

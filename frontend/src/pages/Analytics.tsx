@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Card } from '../components/Card';
 import { getAnalyticsCategories, getAnalyticsMonthly, getFinancialHealthHistory } from '../services/api';
+import { formatCurrency } from '../utils/formatters';
 import { XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, Legend, ResponsiveContainer, AreaChart, Area } from 'recharts';
 import HealthTrendChart from '../components/FinancialHealth/HealthTrendChart';
 import { Loader2 } from 'lucide-react';
@@ -117,7 +118,7 @@ export const Analytics = () => {
                     >
                       <div className="flex justify-between text-sm mb-2">
                         <span className="font-medium text-slate-700 dark:text-slate-300 capitalize">{c.category}</span>
-                        <span className="font-bold text-slate-900 dark:text-slate-100">₹{Number(c.amount).toLocaleString(undefined, {maximumFractionDigits: 0})}</span>
+                        <span className="font-bold text-slate-900 dark:text-slate-100">{formatCurrency(c.amount)}</span>
                       </div>
                       <div className="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2 overflow-hidden">
                         <motion.div 

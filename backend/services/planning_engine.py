@@ -67,6 +67,17 @@ class PlanningEngine:
                 'type': 'expense'
             })
             
+        if request.additional_monthly_savings != 0:
+            scenario_records.append({
+                'transaction_id': 'scen_sav_1',
+                'user_id': self.user_id,
+                'timestamp': now,
+                'amount': request.additional_monthly_savings,
+                'category': 'scenario_savings',
+                'merchant': 'Additional Savings',
+                'type': 'income'
+            })
+            
         category_impacts = []
         category_breakdown = analytics.get_category_breakdown(type_filter='expense', days=30)
         
@@ -101,7 +112,7 @@ class PlanningEngine:
         scen_income = max(0.0, float(scen_totals['income']))
         scen_expense = max(0.0, float(scen_totals['expense']))
         
-        scenario_savings = scen_income - scen_expense + request.additional_monthly_savings
+        scenario_savings = scen_income - scen_expense
         
         scen_health_engine = FinancialHealthEngine(self.user_id, scenario_df)
         scen_health_engine._save_snapshot = lambda overall, breakdown: None

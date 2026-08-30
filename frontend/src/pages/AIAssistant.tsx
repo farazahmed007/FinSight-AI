@@ -4,6 +4,7 @@ import { queryAssistant } from '../services/api';
 import { Send, Bot, User, Loader2, Sparkles } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '../utils/cn';
+import { formatCurrency } from '../utils/formatters';
 
 interface Message {
   id: string;
@@ -116,7 +117,7 @@ export const AIAssistant = () => {
                       <span className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider block mb-2">Forecast Details</span>
                       <div className="flex justify-between items-center">
                         <span className="font-medium text-slate-700 dark:text-slate-300 capitalize">{msg.data.category} <span className="text-slate-400 font-normal">({msg.data.horizon_days} days)</span></span>
-                        <span className="font-bold text-lg text-blue-600 dark:text-blue-400">₹{msg.data.forecast_amount.toLocaleString(undefined, {maximumFractionDigits: 0})}</span>
+                        <span className="font-bold text-lg text-blue-600 dark:text-blue-400">{formatCurrency(msg.data.forecast_amount)}</span>
                       </div>
                     </div>
                   )}

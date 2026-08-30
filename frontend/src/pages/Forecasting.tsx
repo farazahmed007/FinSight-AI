@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Card } from '../components/Card';
 import { getForecast } from '../services/api';
+import { formatCurrency } from '../utils/formatters';
 import { XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, ResponsiveContainer, AreaChart, Area } from 'recharts';
 import { TrendingUp, TrendingDown, Minus, Loader2 } from 'lucide-react';
 import { cn } from '../utils/cn';
@@ -95,7 +96,7 @@ export const Forecasting = () => {
                   <YAxis axisLine={false} tickLine={false} tick={{fill: '#94a3b8', fontSize: 12}} dx={-10} tickFormatter={(val) => `₹${val}`} />
                   <RechartsTooltip 
                     contentStyle={{borderRadius: '12px', border: 'none', boxShadow: '0 10px 15px -3px rgb(0 0 0 / 0.1)', backgroundColor: 'var(--tw-colors-slate-900)', color: '#fff'}} 
-                    formatter={(value: any) => [`₹${Number(value).toFixed(2)}`, 'Predicted Amount']}
+                    formatter={(value: any) => [formatCurrency(Number(value)), 'Predicted Amount']}
                     labelStyle={{color: '#94a3b8', marginBottom: '4px'}}
                   />
                   <Area 
@@ -122,7 +123,7 @@ export const Forecasting = () => {
               <h3 className="text-sm font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider mb-2">Total Projected</h3>
               <div className="flex items-end gap-2">
                 <span className="text-4xl font-bold text-slate-900 dark:text-slate-100">
-                  ₹{loading ? '...' : totalForecast.toLocaleString(undefined, {maximumFractionDigits: 0})}
+                  {loading ? '...' : formatCurrency(totalForecast)}
                 </span>
               </div>
               <p className="text-sm text-slate-600 dark:text-slate-400 mt-2 font-medium">

@@ -3,6 +3,8 @@ import { Target, Plus, AlertCircle, CheckCircle2, Clock, Trash2, Edit2, Trending
 import { motion } from 'framer-motion';
 import { getGoals, getGoalSummary, createGoal, updateGoal, deleteGoal } from '../services/api';
 import { Card } from '../components/Card';
+import { COMMON_CATEGORIES } from '../utils/constants';
+import { formatCurrency } from '../utils/formatters';
 
 export default function Goals() {
   const [goals, setGoals] = useState<any[]>([]);
@@ -179,7 +181,7 @@ export default function Goals() {
               <div>
                 <p className="text-sm text-slate-500 dark:text-slate-400">Total Saved</p>
                 <p className="text-2xl font-bold text-slate-800 dark:text-slate-100">
-                  ₹{summary.total_saved.toLocaleString(undefined, { maximumFractionDigits: 0 })}
+                  {formatCurrency(summary.total_saved)}
                 </p>
               </div>
             </div>
@@ -207,7 +209,7 @@ export default function Goals() {
               <div>
                 <p className="text-sm text-slate-500 dark:text-slate-400">Required Monthly</p>
                 <p className="text-2xl font-bold text-slate-800 dark:text-slate-100">
-                  ₹{(summary.total_required_monthly_savings || 0).toLocaleString(undefined, { maximumFractionDigits: 0 })}
+                  {formatCurrency(summary.total_required_monthly_savings || 0)}
                 </p>
               </div>
             </div>
@@ -243,10 +245,10 @@ export default function Goals() {
                   <div>
                     <div className="flex justify-between text-sm mb-1.5">
                       <span className="font-medium text-slate-700 dark:text-slate-300">
-                        ₹{goal.current_amount.toLocaleString()}
+                        {formatCurrency(goal.current_amount)}
                       </span>
                       <span className="text-slate-500 dark:text-slate-400">
-                        of ₹{goal.target_amount.toLocaleString()}
+                        of {formatCurrency(goal.target_amount)}
                       </span>
                     </div>
                     <div className="w-full h-2.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
@@ -276,7 +278,7 @@ export default function Goals() {
                         <TrendingUp size={12} /> Req. Monthly
                       </p>
                       <p className="text-sm font-medium text-slate-700 dark:text-slate-300 mt-0.5">
-                        ₹{goal.required_monthly_savings.toLocaleString(undefined, { maximumFractionDigits: 0 })}
+                        {formatCurrency(goal.required_monthly_savings)}
                       </p>
                     </div>
                   </div>
@@ -341,13 +343,16 @@ export default function Goals() {
               
               <div>
                 <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Category</label>
-                <input
-                  type="text"
+                <select
                   value={formData.category}
                   onChange={(e) => setFormData({...formData, category: e.target.value})}
-                  className="w-full px-4 py-2 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                  placeholder="e.g. Savings, Travel"
-                />
+                  className="w-full px-4 py-2 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 capitalize"
+                >
+                  <option value="">Select a category</option>
+                  {COMMON_CATEGORIES.map(cat => (
+                    <option key={cat} value={cat}>{cat}</option>
+                  ))}
+                </select>
               </div>
 
               <div className="grid grid-cols-2 gap-4">

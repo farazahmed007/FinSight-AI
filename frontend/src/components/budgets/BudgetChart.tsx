@@ -1,5 +1,6 @@
 import { Card } from '../Card';
 import type { BudgetCategorySummary } from '../../types/budget';
+import { formatCurrency } from '../../utils/formatters';
 import { ResponsiveContainer, BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Bar, Cell } from 'recharts';
 
 interface BudgetChartProps {
@@ -53,7 +54,7 @@ export function BudgetChart({ categories }: BudgetChartProps) {
                 borderRadius: '8px',
                 color: '#fff'
               }}
-              formatter={(value: any) => [`₹${value.toLocaleString('en-IN')}`, '']}
+              formatter={(value: any) => [`${formatCurrency(value)}`, '']}
             />
             <Legend wrapperStyle={{ paddingTop: '20px' }} />
             <Bar dataKey="budget" name="Budget" fill="#e5e7eb" radius={[4, 4, 0, 0]} />
