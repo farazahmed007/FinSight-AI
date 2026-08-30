@@ -6,6 +6,8 @@ import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer 
 } from 'recharts';
 import { simulateScenario } from '../services/api';
+import AffordabilityCalculator from '../components/planning/AffordabilityCalculator';
+import GoalCalculator from '../components/planning/GoalCalculator';
 
 interface ScenarioResponse {
   baseline: {
@@ -51,12 +53,22 @@ interface ScenarioResponse {
 }
 
 const FinancialPlanning: React.FC = () => {
+  const [activeTab, setActiveTab] = useState<'simulator' | 'affordability' | 'goal'>('simulator');
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<ScenarioResponse | null>(null);
   
   const [incomeChange, setIncomeChange] = useState(0);
   const [expenseChange, setExpenseChange] = useState(0);
   const [duration, setDuration] = useState(12);
+  const [categoryChanges, setCategoryChanges] = useState<Record<string, number>>({});
+  const [selectedCategory, setSelectedCategory] = useState<string>('food');
+  const [categoryAmount, setCategoryAmount] = useState<number>(0);
+
+  const maxIncomeChange = result ? Math.max(result.baseline.monthly_income * 2, 5000) : 5000;
+  const minIncomeChange = result ? -Math.max(result.baseline.monthly_income, 1000) : -5000;
+  
+  const maxExpenseChange = result ? Math.max(result.baseline.monthly_expenses * 2, 5000) : 5000;
+  const minExpenseChange = result ? -Math.max(result.baseline.monthly_expenses, 1000) : -5000;
 
   const handleSimulate = async () => {
     setLoading(true);
@@ -64,7 +76,7 @@ const FinancialPlanning: React.FC = () => {
       const res = await simulateScenario({
         monthly_income_change: incomeChange,
         monthly_expense_change: expenseChange,
-        category_changes: {},
+        category_changes: categoryChanges,
         additional_monthly_savings: 0,
         duration_months: duration
       });
@@ -76,6 +88,21 @@ const FinancialPlanning: React.FC = () => {
     }
   };
 
+  const addCategoryChange = () => {
+    if (categoryAmount !== 0) {
+      setCategoryChanges(prev => ({...prev, [selectedCategory]: categoryAmount}));
+      setCategoryAmount(0);
+    }
+  };
+  
+  const removeCategoryChange = (cat: string) => {
+    setCategoryChanges(prev => {
+      const newChanges = {...prev};
+      delete newChanges[cat];
+      return newChanges;
+    });
+  };
+
   useEffect(() => {
     handleSimulate();
   }, []);
@@ -84,24 +111,53 @@ const FinancialPlanning: React.FC = () => {
 
   return (
     <div className="space-y-6">
-      <div className="flex justify-between items-center">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
         <div>
           <h1 className="text-2xl font-bold text-gray-900 dark:text-white flex items-center">
             <Calculator className="w-6 h-6 mr-2 text-indigo-500" />
-            What-If Simulator
+            Financial Planning
           </h1>
-          <p className="text-gray-500 dark:text-gray-400">Model how financial changes impact your future.</p>
+          <p className="text-gray-500 dark:text-gray-400">Model how financial changes impact your future and test affordability.</p>
         </div>
-        <button 
-          onClick={handleSimulate}
-          disabled={loading}
-          className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-lg font-medium transition-colors disabled:opacity-50"
-        >
-          {loading ? 'Simulating...' : 'Run Simulation'}
-        </button>
+        
+        <div className="flex bg-gray-100 dark:bg-gray-800 rounded-lg p-1">
+          <button 
+            onClick={() => setActiveTab('simulator')}
+            className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${activeTab === 'simulator' ? 'bg-white dark:bg-gray-700 text-indigo-600 dark:text-indigo-400 shadow-sm' : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'}`}
+          >
+            What-If Simulator
+          </button>
+          <button 
+            onClick={() => setActiveTab('affordability')}
+            className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${activeTab === 'affordability' ? 'bg-white dark:bg-gray-700 text-indigo-600 dark:text-indigo-400 shadow-sm' : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'}`}
+          >
+            Affordability Calculator
+          </button>
+          <button 
+            onClick={() => setActiveTab('goal')}
+            className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${activeTab === 'goal' ? 'bg-white dark:bg-gray-700 text-indigo-600 dark:text-indigo-400 shadow-sm' : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'}`}
+          >
+            Goal Calculator
+          </button>
+        </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      {activeTab === 'affordability' && <AffordabilityCalculator />}
+      {activeTab === 'goal' && <GoalCalculator />}
+
+      {activeTab === 'simulator' && (
+      <div className="space-y-6">
+        <div className="flex justify-end">
+          <button 
+            onClick={handleSimulate}
+            disabled={loading}
+            className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-lg font-medium transition-colors disabled:opacity-50"
+          >
+            {loading ? 'Simulating...' : 'Run Simulation'}
+          </button>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Builder Panel */}
         <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm border border-gray-100 dark:border-gray-700">
           <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-6">Scenario Builder</h2>
@@ -114,8 +170,8 @@ const FinancialPlanning: React.FC = () => {
               <div className="flex items-center space-x-4">
                 <input 
                   type="range" 
-                  min="-5000" 
-                  max="5000" 
+                  min={minIncomeChange} 
+                  max={maxIncomeChange} 
                   step="100"
                   value={incomeChange}
                   onChange={(e) => setIncomeChange(Number(e.target.value))}
@@ -134,8 +190,8 @@ const FinancialPlanning: React.FC = () => {
               <div className="flex items-center space-x-4">
                 <input 
                   type="range" 
-                  min="-5000" 
-                  max="5000" 
+                  min={minExpenseChange} 
+                  max={maxExpenseChange} 
                   step="100"
                   value={expenseChange}
                   onChange={(e) => setExpenseChange(Number(e.target.value))}
@@ -145,6 +201,62 @@ const FinancialPlanning: React.FC = () => {
                   {expenseChange > 0 ? '+' : ''}{formatCurrency(expenseChange)}
                 </span>
               </div>
+            </div>
+
+            <div className="border-t border-gray-200 dark:border-gray-700 pt-4 mt-4">
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                Category Changes
+              </label>
+              <div className="flex space-x-2 mb-3">
+                <select 
+                  value={selectedCategory} 
+                  onChange={(e) => setSelectedCategory(e.target.value)}
+                  className="flex-1 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg px-3 py-2 text-sm text-gray-900 dark:text-white focus:ring-indigo-500 focus:border-indigo-500"
+                >
+                  <option value="food">Food</option>
+                  <option value="housing">Housing</option>
+                  <option value="transport">Transport</option>
+                  <option value="subscriptions">Subscriptions</option>
+                  <option value="shopping">Shopping</option>
+                  <option value="healthcare">Healthcare</option>
+                  <option value="utilities">Utilities</option>
+                  <option value="entertainment">Entertainment</option>
+                </select>
+                <input 
+                  type="number" 
+                  placeholder="Amount"
+                  value={categoryAmount}
+                  onChange={(e) => setCategoryAmount(Number(e.target.value))}
+                  className="w-24 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg px-3 py-2 text-sm text-gray-900 dark:text-white focus:ring-indigo-500 focus:border-indigo-500"
+                />
+                <button 
+                  onClick={addCategoryChange}
+                  className="bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 px-3 py-2 rounded-lg font-medium text-sm hover:bg-indigo-200"
+                >
+                  Add
+                </button>
+              </div>
+              
+              {Object.keys(categoryChanges).length > 0 && (
+                <div className="space-y-2">
+                  {Object.entries(categoryChanges).map(([cat, amount]) => (
+                    <div key={cat} className="flex justify-between items-center bg-gray-50 dark:bg-gray-900 px-3 py-2 rounded-lg text-sm">
+                      <span className="capitalize font-medium text-gray-700 dark:text-gray-300">{cat}</span>
+                      <div className="flex items-center space-x-3">
+                        <span className={amount < 0 ? 'text-green-500' : 'text-red-500'}>
+                          {amount > 0 ? '+' : ''}{formatCurrency(amount)}
+                        </span>
+                        <button 
+                          onClick={() => removeCategoryChange(cat)}
+                          className="text-gray-400 hover:text-red-500 font-bold text-lg leading-none"
+                        >
+                          &times;
+                        </button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
 
             <div>
@@ -332,6 +444,8 @@ const FinancialPlanning: React.FC = () => {
           )}
         </div>
       </div>
+      </div>
+      )}
     </div>
   );
 };

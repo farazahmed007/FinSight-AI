@@ -79,14 +79,14 @@ class AffordabilityResponse(BaseModel):
     shortfall: float
 
 class GoalPlanningRequest(BaseModel):
-    goal_id: int
+    target_amount: float = Field(..., gt=0)
     target_date: str
 
 class GoalPlanningResponse(BaseModel):
-    goal_id: int
-    remaining_amount: float
-    months_remaining: int
-    required_monthly_saving: float
-    current_monthly_saving: float
-    additional_required: float
-    feasible: bool
+    target_amount: float
+    target_date: str
+    months_to_goal: int
+    required_monthly_savings: float
+    current_projected_capacity: float
+    feasibility: str # HIGH, MEDIUM, LOW
+    shortfall: float

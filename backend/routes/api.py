@@ -186,6 +186,19 @@ def handle_query(data: dict, user_id: str = Depends(require_auth)):
             "message": "Here is your latest financial health breakdown."
         }
             
+    elif intent in ['WHAT_IF_SCENARIO', 'PURCHASE_AFFORDABILITY', 'GOAL_PLANNING_CALCULATOR']:
+        if intent == 'WHAT_IF_SCENARIO':
+            message = "You can simulate changes to your income and expenses in the What-If Simulator. Check the Planning tab to model your scenario!"
+        elif intent == 'PURCHASE_AFFORDABILITY':
+            message = "To find out if you can afford a specific purchase, check out the Affordability Calculator in the Planning section."
+        else:
+            message = "To calculate how much you need to save for a specific goal by a certain date, try the Goal Planning Calculator in the Planning section."
+            
+        return {
+            "intent": intent,
+            "message": message
+        }
+            
     raise AuthException(status_code=400, message="Unknown intent")
 
 @api_bp.get('/forecast/{category}', response_model=ForecastResponse, tags=["Forecasting"])

@@ -121,7 +121,7 @@ class PlanningEngine:
             health_score_change=scenario_metrics.financial_health_score - baseline_metrics.financial_health_score
         )
         
-        goal_impacts = self._calculate_goals_impact(baseline_metrics.monthly_savings, scenario_metrics.monthly_savings)
+        goal_impacts = self._calculate_goals_impact(scenario_df)
         budget_impacts = self._calculate_budget_impacts(scenario_df, request.category_changes)
         smart_insights = self._generate_smart_insights(baseline_metrics, scenario_metrics, goal_impacts, budget_impacts)
         future_projection = self._calculate_future_projections(baseline_metrics.monthly_savings, scenario_metrics.monthly_savings, request.duration_months)
@@ -137,31 +137,42 @@ class PlanningEngine:
             future_projection=future_projection
         )
 
-    def _calculate_goals_impact(self, current_monthly_savings: float, scenario_monthly_savings: float) -> List[GoalProjection]:
-        goals_engine = GoalsEngine(self.user_id, self.transactions_df)
-        goals = [g for g in goals_engine.get_all_goals() if g['status'] != 'COMPLETED']
+    def _calculate_goals_impact(self, scenario_df: pd.DataFrame) -> List[GoalProjection]:
+        base_goals_engine = GoalsEngine(self.user_id, self.transactions_df)
+        base_goals = {g['id']: g for g in base_goals_engine.get_all_goals() if g['status'] != 'COMPLETED'}
+        
+        scen_goals_engine = GoalsEngine(self.user_id, scenario_df)
+        scen_goals = {g['id']: g for g in scen_goals_engine.get_all_goals() if g['status'] != 'COMPLETED'}
         
         projections = []
-        for g in goals:
-            target = g['target_amount']
-            current = g['current_amount']
-            remaining = target - current
-            
-            curr_months = math.ceil(remaining / current_monthly_savings) if current_monthly_savings > 0 else None
-            scen_months = math.ceil(remaining / scenario_monthly_savings) if scenario_monthly_savings > 0 else None
+        for gid, base_g in base_goals.items():
+            scen_g = scen_goals.get(gid)
+            if not scen_g:
+                continue
                 
+            def get_months(g_dict):
+                p_date = g_dict.get('projected_completion_date')
+                if not p_date:
+                    return None
+                d = datetime.strptime(p_date, "%Y-%m-%d")
+                now = datetime.now()
+                return max(1, math.ceil((d - now).days / 30.44))
+                
+            curr_months = get_months(base_g)
+            scen_months = get_months(scen_g)
+            
             improvement = None
             if curr_months is not None and scen_months is not None:
                 improvement = curr_months - scen_months
                 
             projections.append(GoalProjection(
-                goal_id=g['id'],
-                name=g['name'],
-                target_amount=target,
-                current_amount=current,
-                remaining_amount=remaining,
-                current_required_monthly=g['required_monthly_savings'],
-                scenario_required_monthly=max(0, g['required_monthly_savings'] - (scenario_monthly_savings - current_monthly_savings)),
+                goal_id=base_g['id'],
+                name=base_g['name'],
+                target_amount=base_g['target_amount'],
+                current_amount=base_g['current_amount'],
+                remaining_amount=base_g['remaining_amount'],
+                current_required_monthly=base_g['required_monthly_savings'],
+                scenario_required_monthly=scen_g['required_monthly_savings'],
                 current_projected_months=curr_months,
                 scenario_projected_months=scen_months,
                 months_improvement=improvement
@@ -229,8 +240,8 @@ class PlanningEngine:
         scen_accum = 0.0
         
         for i in range(1, duration_months + 1):
-            base_accum += max(0, baseline_savings)
-            scen_accum += max(0, scenario_savings)
+            base_accum += baseline_savings
+            scen_accum += scenario_savings
             projections.append({
                 "month": f"Month {i}",
                 "baseline_savings": base_accum,
@@ -248,9 +259,10 @@ class PlanningEngine:
         shortfall = req_monthly - current_savings
         
         if shortfall <= 0:
-            status = "AFFORDABLE"
-        elif shortfall < (totals['income'] * 0.1):
-            status = "TIGHT"
+            if (current_savings - req_monthly) < (totals['income'] * 0.1):
+                status = "TIGHT"
+            else:
+                status = "AFFORDABLE"
         else:
             status = "NOT_AFFORDABLE"
             
@@ -264,35 +276,34 @@ class PlanningEngine:
         )
 
     def calculate_goal_plan(self, request: GoalPlanningRequest) -> GoalPlanningResponse:
-        goals_engine = GoalsEngine(self.user_id, self.transactions_df)
-        goals = goals_engine.get_all_goals()
-        target_goal = next((g for g in goals if g['id'] == request.goal_id), None)
-        
-        if not target_goal:
-            raise ValueError(f"Goal {request.goal_id} not found")
-            
-        remaining = target_goal['target_amount'] - target_goal['current_amount']
-        
         target_dt = datetime.strptime(request.target_date, '%Y-%m-%d')
         now = datetime.now()
         months = (target_dt.year - now.year) * 12 + target_dt.month - now.month
         months = max(1, months)
         
-        req_monthly = remaining / months
+        req_monthly = request.target_amount / months
         
         analytics = AnalyticsEngine(self.transactions_df)
         totals = analytics.get_period_totals(days=30, offset_days=0)
-        current_savings = totals['income'] - totals['expense']
+        current_savings = max(0, totals['income'] - totals['expense'])
         
-        additional = req_monthly - current_savings
-        feasible = additional <= 0 or (additional < totals['income'] * 0.2)
+        shortfall = max(0, req_monthly - current_savings)
         
+        # Determine feasibility
+        if req_monthly <= current_savings:
+            feasibility = 'HIGH'
+        elif req_monthly <= current_savings * 1.5:
+            # Requires stretching savings by 50%
+            feasibility = 'MEDIUM'
+        else:
+            feasibility = 'LOW'
+            
         return GoalPlanningResponse(
-            goal_id=request.goal_id,
-            remaining_amount=remaining,
-            months_remaining=months,
-            required_monthly_saving=req_monthly,
-            current_monthly_saving=current_savings,
-            additional_required=max(0, additional),
-            feasible=feasible
+            target_amount=request.target_amount,
+            target_date=request.target_date,
+            months_to_goal=months,
+            required_monthly_savings=req_monthly,
+            current_projected_capacity=current_savings,
+            feasibility=feasibility,
+            shortfall=shortfall
         )
