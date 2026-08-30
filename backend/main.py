@@ -9,6 +9,7 @@ from routes.budgets import budgets_bp
 from routes.goals import goals_bp
 from routes.financial_health import financial_health_bp
 from routes.planning import planning_bp
+from routes.auth import auth_bp
 from database import init_db, load_seed_data
 import os
 
@@ -69,6 +70,7 @@ app.include_router(budgets_bp, prefix="/api/budgets")
 app.include_router(goals_bp, prefix="/api/goals")
 app.include_router(financial_health_bp, prefix="/api/financial-health")
 app.include_router(planning_bp, prefix="/api/planning")
+app.include_router(auth_bp, prefix="/api/auth")
 
 @app.on_event("startup")
 async def startup_event():

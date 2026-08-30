@@ -1,13 +1,5 @@
 from fastapi import Request
-import os
-from dotenv import load_dotenv
-
-load_dotenv()
-
-# For prototype purposes, a static token. In production, use OAuth2 / JWT verification.
-VALID_TOKENS = {
-    os.getenv('DEV_API_TOKEN', 'dev-token-123'): 'user_123'
-}
+from services.auth_service import AuthService
 
 class AuthException(Exception):
     def __init__(self, status_code: int, message: str):
@@ -26,10 +18,14 @@ async def require_auth(request: Request):
         
     token = parts[1]
     
-    if token not in VALID_TOKENS:
-        raise AuthException(status_code=401, message="Invalid or expired token")
+    try:
+        payload = AuthService.decode_access_token(token)
+        user_id = payload.get("sub")
+        if not user_id:
+            raise AuthException(status_code=401, message="Invalid token payload")
         
-    # Attach user info to request state
-    request.state.user_id = VALID_TOKENS[token]
-    
-    return request.state.user_id
+        # Attach user info to request state
+        request.state.user_id = user_id
+        return user_id
+    except ValueError as e:
+        raise AuthException(status_code=401, message=str(e))

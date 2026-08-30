@@ -5,9 +5,7 @@ from datetime import datetime, timedelta
 
 from main import app
 from database import init_db
-
-# Mock authentication
-from middleware.auth import VALID_TOKENS
+from services.auth_service import AuthService
 
 @pytest.fixture(autouse=True)
 def setup_database():
@@ -19,7 +17,7 @@ def client():
 
 @pytest.fixture
 def auth_headers():
-    token = list(VALID_TOKENS.keys())[0]
+    token = AuthService.create_access_token({"sub": "user_123", "username": "prototype_user"})
     return {"Authorization": f"Bearer {token}"}
 
 def test_get_all_goals_empty(client, auth_headers):

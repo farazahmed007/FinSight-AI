@@ -88,7 +88,7 @@ class GoalsEngine:
             conn.close()
             return []
             
-        cursor.execute("SELECT * FROM financial_goals ORDER BY target_date ASC")
+        cursor.execute("SELECT * FROM financial_goals WHERE user_id = ? ORDER BY target_date ASC", (self.user_id,))
         rows = cursor.fetchall()
         conn.close()
         
@@ -105,7 +105,7 @@ class GoalsEngine:
     def get_goal(self, goal_id: int):
         conn = get_db_connection()
         cursor = conn.cursor()
-        cursor.execute("SELECT * FROM financial_goals WHERE id = ?", (goal_id,))
+        cursor.execute("SELECT * FROM financial_goals WHERE id = ? AND user_id = ?", (goal_id, self.user_id))
         row = cursor.fetchone()
         conn.close()
         
@@ -115,7 +115,7 @@ class GoalsEngine:
             # We need to know total active goals to calculate pace for this single goal
             conn_temp = get_db_connection()
             cursor_temp = conn_temp.cursor()
-            cursor_temp.execute("SELECT target_amount, current_amount FROM financial_goals")
+            cursor_temp.execute("SELECT target_amount, current_amount FROM financial_goals WHERE user_id = ?", (self.user_id,))
             all_rows = cursor_temp.fetchall()
             active_count = sum(1 for r in all_rows if max(0.0, float(r['target_amount']) - float(r['current_amount'])) > 0)
             conn_temp.close()
@@ -130,10 +130,11 @@ class GoalsEngine:
         
         cursor.execute(
             """
-            INSERT INTO financial_goals (name, description, target_amount, current_amount, target_date, category) 
-            VALUES (?, ?, ?, ?, ?, ?)
+            INSERT INTO financial_goals (user_id, name, description, target_amount, current_amount, target_date, category) 
+            VALUES (?, ?, ?, ?, ?, ?, ?)
             """,
             (
+                self.user_id,
                 data['name'], 
                 data.get('description'), 
                 data['target_amount'], 
@@ -166,8 +167,9 @@ class GoalsEngine:
             
         update_fields.append("updated_at = CURRENT_TIMESTAMP")
         params.append(goal_id)
+        params.append(self.user_id)
         
-        query = f"UPDATE financial_goals SET {', '.join(update_fields)} WHERE id = ?"
+        query = f"UPDATE financial_goals SET {', '.join(update_fields)} WHERE id = ? AND user_id = ?"
         cursor.execute(query, params)
         conn.commit()
         conn.close()
@@ -177,7 +179,7 @@ class GoalsEngine:
     def delete_goal(self, goal_id: int):
         conn = get_db_connection()
         cursor = conn.cursor()
-        cursor.execute("DELETE FROM financial_goals WHERE id = ?", (goal_id,))
+        cursor.execute("DELETE FROM financial_goals WHERE id = ? AND user_id = ?", (goal_id, self.user_id))
         conn.commit()
         conn.close()
         return True

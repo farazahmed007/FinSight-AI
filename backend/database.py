@@ -16,6 +16,17 @@ def init_db():
     cursor = conn.cursor()
     
     cursor.execute('''
+    CREATE TABLE IF NOT EXISTS users (
+        id TEXT PRIMARY KEY,
+        username TEXT UNIQUE NOT NULL,
+        password_hash TEXT,
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+    )
+    ''')
+
+    cursor.execute("INSERT OR IGNORE INTO users (id, username) VALUES ('user_123', 'prototype_user')")
+
+    cursor.execute('''
     CREATE TABLE IF NOT EXISTS transactions (
         transaction_id TEXT PRIMARY KEY,
         user_id TEXT,
@@ -30,18 +41,20 @@ def init_db():
     cursor.execute('''
     CREATE TABLE IF NOT EXISTS budgets (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
+        user_id TEXT NOT NULL DEFAULT 'user_123',
         category TEXT NOT NULL,
         amount REAL NOT NULL,
         month TEXT NOT NULL,
         created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
         updated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-        UNIQUE(category, month)
+        UNIQUE(user_id, category, month)
     )
     ''')
     
     cursor.execute('''
     CREATE TABLE IF NOT EXISTS financial_goals (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
+        user_id TEXT NOT NULL DEFAULT 'user_123',
         name TEXT NOT NULL,
         description TEXT,
         target_amount REAL NOT NULL CHECK(target_amount > 0),

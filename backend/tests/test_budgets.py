@@ -1,15 +1,14 @@
 import pytest
 from fastapi.testclient import TestClient
 from main import app
-import os
 import sqlite3
 from database import DB_PATH, init_db
-from middleware.auth import VALID_TOKENS
+from services.auth_service import AuthService
 
 client = TestClient(app)
 
 # Use existing auth mechanism
-token = list(VALID_TOKENS.keys())[0]
+token = AuthService.create_access_token({"sub": "user_123", "username": "prototype_user"})
 HEADERS = {"Authorization": f"Bearer {token}"}
 
 @pytest.fixture(autouse=True)

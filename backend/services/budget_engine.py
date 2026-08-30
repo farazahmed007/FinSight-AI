@@ -29,8 +29,8 @@ class BudgetEngine:
             return []
             
         cursor.execute(
-            "SELECT * FROM budgets WHERE month = ?",
-            (month,)
+            "SELECT * FROM budgets WHERE month = ? AND user_id = ?",
+            (month, self.user_id)
         )
         rows = cursor.fetchall()
         conn.close()
@@ -111,10 +111,10 @@ class BudgetEngine:
         try:
             cursor.execute(
                 """
-                INSERT INTO budgets (category, amount, month) 
-                VALUES (?, ?, ?)
+                INSERT INTO budgets (user_id, category, amount, month) 
+                VALUES (?, ?, ?, ?)
                 """,
-                (category, amount, month)
+                (self.user_id, category, amount, month)
             )
             conn.commit()
             budget_id = cursor.lastrowid
@@ -122,7 +122,7 @@ class BudgetEngine:
             conn.close()
             raise e
         
-        cursor.execute("SELECT * FROM budgets WHERE id = ?", (budget_id,))
+        cursor.execute("SELECT * FROM budgets WHERE id = ? AND user_id = ?", (budget_id, self.user_id))
         budget = dict(cursor.fetchone())
         conn.close()
         return budget
@@ -134,13 +134,13 @@ class BudgetEngine:
             """
             UPDATE budgets 
             SET amount = ?, updated_at = CURRENT_TIMESTAMP 
-            WHERE id = ?
+            WHERE id = ? AND user_id = ?
             """,
-            (amount, budget_id)
+            (amount, budget_id, self.user_id)
         )
         conn.commit()
         
-        cursor.execute("SELECT * FROM budgets WHERE id = ?", (budget_id,))
+        cursor.execute("SELECT * FROM budgets WHERE id = ? AND user_id = ?", (budget_id, self.user_id))
         row = cursor.fetchone()
         conn.close()
         if row:
@@ -150,7 +150,7 @@ class BudgetEngine:
     def delete_budget(self, budget_id: int):
         conn = get_db_connection()
         cursor = conn.cursor()
-        cursor.execute("DELETE FROM budgets WHERE id = ?", (budget_id,))
+        cursor.execute("DELETE FROM budgets WHERE id = ? AND user_id = ?", (budget_id, self.user_id))
         conn.commit()
         conn.close()
         return True
@@ -158,7 +158,7 @@ class BudgetEngine:
     def get_budget(self, budget_id: int):
         conn = get_db_connection()
         cursor = conn.cursor()
-        cursor.execute("SELECT * FROM budgets WHERE id = ?", (budget_id,))
+        cursor.execute("SELECT * FROM budgets WHERE id = ? AND user_id = ?", (budget_id, self.user_id))
         row = cursor.fetchone()
         conn.close()
         if row:

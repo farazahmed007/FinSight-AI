@@ -4,12 +4,11 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')
 from fastapi.testclient import TestClient
 from main import app
 from database import init_db, load_seed_data
-import os
-from middleware.auth import VALID_TOKENS
+from services.auth_service import AuthService
 
 client = TestClient(app)
 
-token = list(VALID_TOKENS.keys())[0]
+token = AuthService.create_access_token(data={"sub": "user_123"})
 HEADERS = {"Authorization": f"Bearer {token}"}
 
 @pytest.fixture(autouse=True)

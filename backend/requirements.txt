@@ -7,3 +7,5 @@ statsmodels
 python-dotenv
 pytest
 httpx
+passlib[bcrypt]
+PyJWT
